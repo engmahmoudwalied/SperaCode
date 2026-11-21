@@ -8,7 +8,8 @@ export type PortfolioProject = {
   image: string
   imageAlt: string
   imageAltEn: string
-  demoUrl: string
+  demoUrl?: string
+  isLive?: boolean
 }
 
 export const projects: PortfolioProject[] = [
@@ -22,7 +23,7 @@ export const projects: PortfolioProject[] = [
     image: '/projects/gradehub-saudi.webp',
     imageAlt: 'واجهة منصة مشاريع التخرج السعودية مع إحصائيات الجامعات والمشاريع والشركات.',
     imageAltEn: 'Saudi GradHub platform homepage showcasing graduation projects, universities, and partner companies.',
-    demoUrl: 'https://saudi-gradconnect.vercel.app',
+    isLive: false,
   },
   {
     title: 'Acceda AI',
@@ -34,7 +35,7 @@ export const projects: PortfolioProject[] = [
     image: '/projects/acceda-ai.webp',
     imageAlt: 'واجهة نظام ACCEDA للتصنيف التلقائي لمشاعر الأطفال وتحليل الرسومات.',
     imageAltEn: 'ACCEDA AI platform for automatic classification of children’s emotions via drawing analysis.',
-    demoUrl: 'https://acceda-ai.vercel.app',
+    isLive: false,
   },
   {
     title: 'DeepEye AI Security',
@@ -46,7 +47,7 @@ export const projects: PortfolioProject[] = [
     image: '/projects/deepeye-security.webp',
     imageAlt: 'لوحة فحص وتحليل الوسائط الرقمية وكشف التزييف العميق بنظام DeepEye.',
     imageAltEn: 'DeepEye AI inspection dashboard detecting deepfake media and synthetic risks.',
-    demoUrl: 'https://deep-eye-security.vercel.app',
+    isLive: false,
   },
   {
     title: 'نظام الرصد الذكي والمراقبة الميدانية',
@@ -58,7 +59,7 @@ export const projects: PortfolioProject[] = [
     image: '/projects/field-safety.webp',
     imageAlt: 'لوحة معلومات المراقبة الميدانية ونظام الرصد الذكي وتوزيع مستويات الخطورة وتصنيفات السلامة.',
     imageAltEn: 'Smart field safety monitoring dashboard showing hazard distribution and station ratings.',
-    demoUrl: 'https://field-safety-monitoring.vercel.app',
+    isLive: false,
   },
   {
     title: 'استلهام للإرشاد المهني والمحاكاة',
@@ -70,7 +71,7 @@ export const projects: PortfolioProject[] = [
     image: '/projects/istilham-guidance.webp',
     imageAlt: 'بوابة منصة استلهام للإرشاد المهني والمحاكاة وتوجيه الطلاب للقرارات المهنية.',
     imageAltEn: 'Istilham career simulation and guidance platform portal for students.',
-    demoUrl: 'https://istilham-guidance.vercel.app',
+    isLive: false,
   },
   {
     title: 'مكتب المحاماة الذكي - Legal ERP',
@@ -82,7 +83,7 @@ export const projects: PortfolioProject[] = [
     image: '/projects/legal-erp.webp',
     imageAlt: 'شاشة الفئات الرئيسية ونظام تصنيف القضايا والبحث في المستندات بمكتب المحاماة الذكي.',
     imageAltEn: 'Smart Legal ERP dashboard for law practice management, litigation categories, and case files.',
-    demoUrl: 'https://legal-erp-smart.vercel.app',
+    isLive: false,
   },
   {
     title: 'PharmaSync POS & Inventory',
@@ -94,7 +95,7 @@ export const projects: PortfolioProject[] = [
     image: '/projects/pharmacy-pos.webp',
     imageAlt: 'لوحة معلومات PharmaSync لإدارة مخزون الأدوية ونقطة البيع السريعة وتنبيهات الصلاحية.',
     imageAltEn: 'PharmaSync POS overview with inventory stock management, barcode checkout, and sales charts.',
-    demoUrl: 'https://pharmasync-pos.vercel.app',
+    isLive: false,
   },
   {
     title: 'VAR 3D Simulation & Telemetry',
@@ -106,7 +107,7 @@ export const projects: PortfolioProject[] = [
     image: '/projects/var-simulation.webp',
     imageAlt: 'بيئة المحاكاة ثلاثية الأبعاد لحكم الفيديو المساعد VAR مع إحداثيات المستشعرات وتتبع الكرة.',
     imageAltEn: '3D VAR simulation view with real-time ball coordinates, pitch arc sensor telemetry, and scenario testing.',
-    demoUrl: 'https://var-simulation-3d.vercel.app',
+    isLive: false,
   },
   {
     title: 'منصة النوخذة الذكية - إمارات 2071',
@@ -119,6 +120,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'بوابة تسجيل منصة النوخذة الذكية لتمكين المعلم والطالب عبر وكلاء التعلم المتطورين.',
     imageAltEn: 'Al Nowkhaza UAE Classroom Cell Agent portal for teachers and students.',
     demoUrl: 'https://al-nowkhaza-uae-agents.vercel.app/auth',
+    isLive: true,
   },
   {
     title: 'Tawassul AI Chat (تواصل)',
@@ -131,6 +133,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'واجهة منصة تواصل للمحادثات الفورية الذكية وتلخيص الحوارات عبر الذكاء الاصطناعي.',
     imageAltEn: 'Tawassul real-time chat interface featuring instant messaging and AI insights.',
     demoUrl: 'https://smart-communication-git-c2709f-mohamedkhaleds-projects-1b0eba16.vercel.app',
+    isLive: true,
   },
   {
     title: 'CryptoGuard',
@@ -143,6 +146,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'واجهة منصة CryptoGuard لتشفير النصوص العربية والتعتيم داخل الصور بخوارزميات متقدمة.',
     imageAltEn: 'CryptoGuard Arabic encryption and image steganography platform interface.',
     demoUrl: 'https://safe-arabic-secrets.vercel.app',
+    isLive: true,
   },
   {
     title: 'مدرستنا الكويتية (SchoolQ8)',
@@ -155,6 +159,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'الصفحة الرئيسية لمنصة مدرستنا الكويتية التعليمية وأقسام الكتب والمذكرات والاختبارات.',
     imageAltEn: 'SchoolQ8 platform homepage showing school books, revision notes, and exam banks.',
     demoUrl: 'https://schoolq8.com/',
+    isLive: true,
   },
   {
     title: 'شركة حسين غازي الزاير للمقاولات (HZ)',
@@ -167,6 +172,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'موقع شركة حسين غازي الزاير للمقاولات العامة في السعودية واستعراض الأعمال الإنشائية.',
     imageAltEn: 'HZ Construction Saudi contracting corporate website with project gallery and quote requests.',
     demoUrl: 'https://www.hz-ksa.com',
+    isLive: true,
   },
   {
     title: 'شركة البحر الأحمر للطرق والمقاولات',
@@ -179,6 +185,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'الصفحة الرئيسية لموقع شركة البحر الأحمر للطرق والمقاولات العامة واستعراض أعمال الأسفلت.',
     imageAltEn: 'Red Sea Roads corporate website highlighting road construction and infrastructure excellence.',
     demoUrl: 'https://www.redsearoadseg.com',
+    isLive: true,
   },
   {
     title: 'Titan Trade ERP',
@@ -191,6 +198,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'بوابة تسجيل وواجهة منظومة Titan Trade لإدارة التجارة وسلاسل الإمداد.',
     imageAltEn: 'Titan Trade ERP portal sign-in and ecosystem dashboard with golden branding.',
     demoUrl: 'https://system.titantrade-eg.com',
+    isLive: true,
   },
   {
     title: 'ESW Landscape & Contracting',
@@ -202,7 +210,8 @@ export const projects: PortfolioProject[] = [
     image: '/projects/esw-engineering.png',
     imageAlt: 'معرض توريدات اللاندسكيب والمشروعات الخارجية لشركة ESW في مصر.',
     imageAltEn: 'ESW Landscape & Contracting project portfolio for premium outdoor spaces.',
-    demoUrl: 'https://esw-co.com',
+    demoUrl: 'https://www.esw-co.com',
+    isLive: true,
   },
   {
     title: 'RAM Stone',
@@ -215,6 +224,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'المعرض الرقمي لشركة RAM Stone للرخام والجرانيت الطبيعي والتصدير الدولي.',
     imageAltEn: 'RAM Stone digital showroom for premium marble and granite exports.',
     demoUrl: 'https://ram-stone.vercel.app',
+    isLive: true,
   },
   {
     title: 'Athar Digital Growth (أثر)',
@@ -227,6 +237,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'واجهة وكالة أثر للحلول الرقمية المتكاملة والهوية البصرية ونمو العلامات التجارية.',
     imageAltEn: 'Athar Digital Growth agency homepage for brand identity and digital acceleration.',
     demoUrl: 'https://athar-cfy.pages.dev',
+    isLive: true,
   },
   {
     title: 'Dynamic Report Builder',
@@ -239,6 +250,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'واجهة بناء وتصدير التقارير الديناميكية مع المعاينة المباشرة وتصدير PDF.',
     imageAltEn: 'Dynamic Report Builder tool with form inputs, live preview, and PDF export.',
     demoUrl: 'https://report-builder-three.vercel.app',
+    isLive: true,
   },
   {
     title: 'نظام حضور وانصراف نادي نورة موف',
@@ -251,6 +263,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'شاشة تسجيل الدخول لنظام حضور وانصراف موظفات نادي نورة موف بالرمز المتجدد.',
     imageAltEn: 'Noura Move employee attendance portal login screen with dynamic QR verification.',
     demoUrl: 'https://attendance-umber-beta.vercel.app',
+    isLive: true,
   },
   {
     title: 'شركة البركة للخدمات اللوجستية ونقل الأثاث',
@@ -263,6 +276,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'موقع شركة البركة لنقل العفش والفك والتركيب والتغليف في أبها وخميس مشيط.',
     imageAltEn: 'Elbaraka moving and logistics company website with instant service booking.',
     demoUrl: 'https://elbaraka.kesug.com/?i=1',
+    isLive: true,
   },
   {
     title: 'Attendexa Academic Student Portal',
@@ -274,7 +288,7 @@ export const projects: PortfolioProject[] = [
     image: '/projects/attendexa-academic.webp',
     imageAlt: 'واجهة بوابة الطالب الأكاديمية ونظام الجداول الدراسية الأسبوعية بنظام Attendexa.',
     imageAltEn: 'Attendexa Academic weekly course schedule and student attendance portal.',
-    demoUrl: 'https://attendexa-academic.vercel.app',
+    isLive: false,
   },
   {
     title: '4M Group',
@@ -287,6 +301,7 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'لقطة من الصفحة الرئيسية لموقع 4M Group تعرض حلول المقاولات والتوريدات.',
     imageAltEn: 'Screenshot of the 4M Group home page highlighting contracting and supply services.',
     demoUrl: 'https://www.4mgroupcs.com/',
+    isLive: true,
   },
   {
     title: 'Fun Group',
@@ -299,5 +314,6 @@ export const projects: PortfolioProject[] = [
     imageAlt: 'صورة غلاف توضيحية لمركز ترفيه عائلي يضم ألعاب أركيد ومنطقة ألعاب أطفال.',
     imageAltEn: 'Illustrative cover image of a family entertainment center with arcade games and a children’s play area.',
     demoUrl: 'https://www.fungroup-eg.com/',
+    isLive: true,
   },
 ]

@@ -36,36 +36,36 @@ import { homeFaqs } from './seo-data'
 type Locale = 'ar' | 'en'
 
 const services = [
-  { icon: Globe2, en: 'Web development', ar: 'تطوير المواقع والمنصات', descEn: 'Fast, secure, search-optimized web apps and platforms for ambitious businesses.', descAr: 'مواقع وتطبيقات ويب سريعة، آمنة، ومهيأة للظهور في محركات البحث ومحركات الذكاء الاصطناعي.' },
-  { icon: Smartphone, en: 'Mobile applications', ar: 'تطبيقات الجوال', descEn: 'High-performance iOS and Android apps built with Flutter and modern stacks.', descAr: 'تطبيقات متطورة لأجهزة iOS وAndroid بتجربة مستخدم سلسة وأداء فائق السرعة.' },
-  { icon: QrCode, en: 'Digital QR menu', ar: 'المنيو الرقمي التفاعلي QR', descEn: 'Bilingual digital restaurant menus with direct WhatsApp ordering and instant updates.', descAr: 'قوائم طعام رقمية تفاعلية بمسح QR مع طلب فوري عبر واتساب ودون تكاليف طباعة.', badge: true },
-  { icon: Bot, en: 'AI solutions & Chatbots', ar: 'حلول الذكاء الاصطناعي والأتمتة', descEn: 'Custom AI chatbots and business workflow automations that scale operations.', descAr: 'روبوتات محادثة ذكية وأتمتة للعمليات اليومية ترفع كفاءة أعمالك وتخدم عملاءك على مدار الساعة.' },
-  { icon: PenTool, en: 'UI/UX design', ar: 'تصميم تجربة وواجهة المستخدم UI/UX', descEn: 'Data-driven, human-centered product design that maximizes engagement.', descAr: 'واجهات رقمية مبنية على دراسة سلوك المستخدم لتحقيق أعلى معدلات تحويل ورضا.' },
-  { icon: Wrench, en: 'Maintenance & support', ar: 'الصيانة والدعم الفني المستمر', descEn: 'Proactive speed optimization, security updates, and SLA technical support.', descAr: 'متابعة دورية، وتحديثات أمنية، وإصلاح أعطال، وضمان استقرار موقعك أو تطبيقك.' },
-  { icon: Mail, en: 'Enterprise Email & Hosting', ar: 'البريد المؤسسي والاستضافة السحابية', descEn: 'Reliable cloud infrastructure and corporate email accounts under your domain.', descAr: 'بنية تحتية سحابية متقدمة، واستضافة فائقة السرعة، وبريد إلكتروني رسمي بهوية شركتك.' },
-  { icon: Code2, en: 'Custom business software', ar: 'أنظمة إدارة الأعمال المخصصة', descEn: 'Bespoke ERPs, internal tools, and dashboards shaped to your exact business rules.', descAr: 'لوحات تحكم وأنظمة إدارة مصممة خصيصًا لتلائم طبيعة ودورة عمل شركتك.' },
+  { icon: Globe2, en: 'Web development', ar: 'تطوير المواقع والمنصات', descEn: 'Fast, secure, search-optimized web apps and platforms for ambitious businesses.', descAr: 'مواقع وتطبيقات سريعة وجذابة تفتح في ثانية، وتظهر في بحث جوجل وتجيبلك عملاء جدد.' },
+  { icon: Smartphone, en: 'Mobile applications', ar: 'تطبيقات الجوال الذكية', descEn: 'High-performance iOS and Android apps built with Flutter and modern stacks.', descAr: 'تطبيقات سهلة وخفيفة لأجهزة الآيفون والأندرويد تخلّي زباينك يطلبوا منك بضغطة زر.' },
+  { icon: QrCode, en: 'Digital QR menu', ar: 'المنيو الرقمي التفاعلي QR', descEn: 'Bilingual digital restaurant menus with direct WhatsApp ordering and instant updates.', descAr: 'منيو إلكتروني ذكي لمطعمك بمسحة باركود، يوفّر مصاريف الطباعة وتوصلك الطلبات ع الواتساب فوراً.', badge: true },
+  { icon: Bot, en: 'AI solutions & Chatbots', ar: 'مساعد ذكي ورد آلي', descEn: 'Custom AI chatbots and business workflow automations that scale operations.', descAr: 'رد آلي ومساعد ذكي يجاوب على أسئلة زباينك في الموقع والواتساب 24 ساعة ويجمعلك بيانات المبيعات.' },
+  { icon: PenTool, en: 'UI/UX design', ar: 'تصميم واجهات احترافية UI/UX', descEn: 'Data-driven, human-centered product design that maximizes engagement.', descAr: 'تصميم شيك ومريح للعين يعكس احترافية شركتك ويخلي العميل يثق فيك ويطلب بسهولة.' },
+  { icon: Wrench, en: 'Maintenance & support', ar: 'المتابعة والدعم الفني', descEn: 'Proactive speed optimization, security updates, and SLA technical support.', descAr: 'متابعة دورية وصيانة مستمرة لضمان سرعة موقعك وحمايته وإصلاح أي مشكلة تظهر فوراً.' },
+  { icon: Mail, en: 'Enterprise Email & Hosting', ar: 'البريد الرسمي والاستضافة', descEn: 'Reliable cloud infrastructure and corporate email accounts under your domain.', descAr: 'إيميلات رسمية باسم شركتك (مثل info@yourcompany.com) واستضافة سريعة وثابتة بدون انقطاع.' },
+  { icon: Code2, en: 'Custom business software', ar: 'برامج إدارة وفواتير مخصصة', descEn: 'Bespoke ERPs, internal tools, and dashboards shaped to your exact business rules.', descAr: 'برامج إدارة ومخازن وفواتير مفصلة لطريقة شغلك، توفر وقتك وتدير حساباتك بدون اشتراكات شهرية.' },
 ]
 
 const process = [
-  ['Discover', 'We analyze your market, business goals, and technical requirements.', 'الاستكشاف والتحليل', 'ندرس متطلباتك، ونحدد الفئات المستهدفة، ونرسم خارطة طريق واضحة.'],
-  ['Design', 'We design user-centric interfaces and build interactive prototypes.', 'التصميم وتجربة الاستخدام', 'نصمم واجهات عصرية ونماذج تفاعلية تراعي أدق تفاصيل رحلة المستخدم.'],
-  ['Develop', 'We engineer robust solutions using scalable, modern frameworks.', 'التطوير البرمجي', 'نبني المشروع بشيفرة نظيفة، سريعة، ومتوافقة مع أعلى معايير الأمان.'],
-  ['Test & launch', 'We run comprehensive QA and deploy to high-availability servers.', 'الاختبار والإطلاق', 'فحص شامل للأداء والتوافق والأمان قبل التدشين الرسمي للمشروع.'],
-  ['Support & growth', 'We continuously monitor, maintain, and help scale your product.', 'الدعم والنمو المستمر', 'متابعة أداء مستمرة وتحديثات دورية لمواكبة نمو أعمالك بنجاح.'],
+  ['Discover', 'We analyze your market, business goals, and technical requirements.', 'الاستكشاف والتخطيط', 'نسمع فكرتك ونحدد طلباتك ونعملك خطة واضحة ومناسبة لميزانيتك.'],
+  ['Design', 'We design user-centric interfaces and build interactive prototypes.', 'التصميم وتجربة الاستخدام', 'بنصمم شكل الشاشات ونوريك شكل موقعك أو تطبيقك وتجربه بنفسك قبل البرمجة.'],
+  ['Develop', 'We engineer robust solutions using scalable, modern frameworks.', 'التطوير والبرمجة', 'بنبرمج المشروع بأعلى كفاءة وسرعة ونتابع معاك التطور خطوة بخطوة أولاً بأول.'],
+  ['Test & launch', 'We run comprehensive QA and deploy to high-availability servers.', 'التجربة والفحص', 'بنجرب كل زرار وكل شاشة ونتأكد من السرعة والأمان قبل ما نطلق المشروع للجمهور.'],
+  ['Support & growth', 'We continuously monitor, maintain, and help scale your product.', 'الإطلاق والدعم المستمر', 'بنطلق مشروعك رسمياً، ونسلمك كل حاجة باسمك، ونكون معاك بالدعم والضمان وندربك على إدارته.'],
 ]
 
 const copy = {
   en: {
     nav: ['Home', 'Services', 'Work', 'About', 'FAQ', 'Contact'],
-    badge: 'SOFTWARE HOUSE & AI LAB',
-    hero: <>We engineer digital products that <em>drive exponential business growth.</em></>,
-    sub: 'SperaCode delivers end-to-end software solutions: custom websites, native-grade mobile apps, digital QR menus, AI automations, and UI/UX design—from concept to scale.',
+    badge: 'SOFTWARE HOUSE & DIGITAL STUDIO',
+    hero: <>We build websites and mobile apps that <em>grow your sales and scale your business.</em></>,
+    sub: 'SperaCode turns your ideas into high-speed websites, intuitive mobile apps, digital QR menus, and smart automations—delivered on time with zero hassle and full support.',
     start: 'Start your project',
-    work: 'Explore our portfolio',
-    checks: ['Guaranteed delivery dates', 'Complimentary post-launch warranty', '100% IP & code ownership'],
-    stats: ['Delivered projects', 'Satisfied clients', 'Years of experience', 'SLA technical support'],
+    work: 'Explore our work',
+    checks: ['Strict on-time delivery', 'Complimentary post-launch warranty', '100% full code & asset ownership'],
+    stats: ['Delivered projects', 'Satisfied clients', 'Years in business', 'Fast direct support'],
     services: 'Our services',
-    servicesSub: 'Comprehensive engineering and digital capabilities built to scale your business.',
+    servicesSub: 'Practical, reliable digital solutions crafted to save you time and delight your clients.',
     projects: 'Selected work',
     projectsSub: 'Curated platforms, e-commerce stores, and enterprise systems delivered to leading companies.',
     projectDemo: 'LIVE DEMO',
@@ -96,39 +96,39 @@ const copy = {
   },
   ar: {
     nav: ['الرئيسية', 'خدماتنا', 'أعمالنا', 'لماذا نحن', 'الأسئلة الشائعة', 'اتصل بنا'],
-    badge: 'شركة برمجيات وحلول ذكاء اصطناعي',
-    hero: <>نبني منتجات رقمية متقدمة <em>تدعم نمو أعمالك وتضاعف نجاحها.</em></>,
-    sub: 'سبيرا كود (SperaCode) شركة برمجيات تقدّم حلولًا رقمية وهندسية متكاملة تشمل: المواقع الإلكترونية، تطبيقات الجوال، المنيو الرقمي QR، وحلول الذكاء الاصطناعي وتصميم UI/UX من الفكرة إلى الريادة.',
+    badge: 'حلول برمجية ذكية لمشروعك',
+    hero: <>نبني لك موقعك وتطبيقك باحترافية.. <em>لنوصلك لعملاء أكثر ونكبّر مشروعك.</em></>,
+    sub: 'في سبيرا كود (SperaCode) بنحول فكرتك لموقع سريع، تطبيق موبايل سهل، أو منيو QR يريّح زباينك.. بنسلّمك شغلك في ميعاده وبأعلى جودة تفيدك في البيع وتكبّر علامتك التجارية.',
     start: 'ابدأ مشروعك معنا',
     work: 'استعرض سابقة أعمالنا',
-    checks: ['التزام صارم بمواعيد التسليم', 'فترة ضمان ودعم فني بعد الإطلاق', 'ملكية فكرية وكود بنسبة 100% للعميل'],
-    stats: ['مشروعًا تم تنفيذه', 'عميلًا يثق بنا', 'سنوات خبرة متخصصة', 'دعم فني متواصل'],
+    checks: ['تسليم في الميعاد المحدد بدون أي تأخير', 'ضمان ومتابعة فنية مجانية بعد التسليم', 'الموقع والكود بالكامل ملكك أنت 100%'],
+    stats: ['مشروع تم تسليمه بنجاح', 'عميل سعيد بشغلنا', 'سنوات خبرة في السوق', 'دعم فني سريع ومباشر'],
     services: 'خدماتنا وحلولنا',
-    servicesSub: 'منظومة تقنية متكاملة صُممت لتمكين علامتك التجارية من المنافسة والتوسع.',
+    servicesSub: 'حلول عملية وسهلة صممناها عشان تريّحك وتكبّر شغلك وتسهّل على عملائك.',
     projects: 'نماذج من أعمالنا',
-    projectsSub: 'مجموعة مختارة من المواقع، المنصات الرقمية، وأنظمة الأعمال التي نفذناها مع روابط مباشرة لاستكشافها.',
+    projectsSub: 'مجموعة مختارة من المواقع، المنصات، وتطبيقات الأعمال التي نفذناها مع روابط حية لمعاينتها.',
     projectDemo: 'موقع حي',
     case: 'فتح المشروع',
-    qrTitle: 'قائمة طعامك الذكية.. بمسحة واحدة.',
-    qrSub: 'وفّر لرواد مطعمك أو مقهاك تجربة استثنائية مع منيو تفاعلي سريع؛ حدّث الأصناف والأسعار في ثوانٍ، واستقبل طلبات الزبائن مباشرة على واتساب دون مصاريف طباعة.',
-    benefits: ['تحديث فوري للأسعار والوجبات', 'وداعًا لتكاليف الطباعة وإعادة التصميم', 'واجهة ثنائية اللغة (عربي وإنجليزي)', 'يعمل فورًا على أي هاتف دون تحميل تطبيق', 'استقبال الطلبات بضغطة زر على واتساب'],
-    plans: 'احصل على منيو QR الآن',
-    demo: 'جرّب النسخة التجريبية',
-    why: 'لماذا يختارنا العملاء؟',
+    qrTitle: 'منيو مطعمك الذكي.. بمسحة واحدة.',
+    qrSub: 'وفّر لرواد مطعمك أو كافيهك تجربة مريحة وسريعة؛ حدّث الأصناف والأسعار في ثوانٍ من موبايلك، واستقبل طلبات الزبائن مباشرة على واتساب بدون أي مصاريف طباعة.',
+    benefits: ['تعديل فوري للأسعار والوجبات في أي وقت', 'وفّر آلاف الجنيهات من مصاريف الطباعة والتجديد', 'قائمة ثنائية اللغة (عربي وإنجليزي) بصور واضحة', 'يفتح فوراً بكاميرا الموبايل بدون تحميل أي برنامج', 'الزبون يطلب بضغطة زر وتوصلك الطلبات ع الواتساب'],
+    plans: 'احصل على منيو QR لمطعمك',
+    demo: 'جرّب نسخة تجريبية',
+    why: 'ليه تختار سبيرا كود؟',
     reasons: [
-      ['التزام تام بالمواعيد', 'جدول زمني واضح ومراحل تسليم محددة نلتزم بها بدقة واحترافية.'],
-      ['ضمان ودعم فني حقيقي', 'نقدم ضمانًا فنيًا مجانيًا بعد الإطلاق مع إمكانية الاشتراك في باقات الصيانة الشاملة.'],
-      ['تسعير شفاف وعادل', 'عروض أسعار تفصيلية ومكتوبة، وسداد على دفعات مرحلية دون أي رسوم غير معلنة.'],
-      ['شيفرة برمجية نقية وقابلة للتوسع', 'بناء هندسي متين بنية تحتية سحابية موثوقة وقابلة للتطوير المستمر مع نمو مشروعك.'],
+      ['التزام تام بالمواعيد', 'بنحدد معاك موعد تسليم واضح ومكتوب في العقد، ونلتزم بيه بدقة بدون أي مماطلة أو تأخير.'],
+      ['ضمان ودعم فني حقيقي', 'بنفضل في ضهرك بعد الإطلاق؛ أي استفسار أو مشكلة بنحلها فوراً وبندربك على إدارة شغلك.'],
+      ['أسعار واضحة بدون مفاجآت', 'عرض سعر تفصيلي ومكتوب من الأول، مع دفعات مريحة على مراحل الشغل وبدون أي مصاريف مخفية.'],
+      ['شغل متقن يكبر معاك', 'موقعك وتطبيقك مصممين بطريقة حديثة تخليهم سريعين وتقدر تضيف عليهم أي ميزات جديدة في أي وقت.'],
     ],
-    process: 'منهجية العمل والإنتاج',
+    process: 'خطوات العمل بكل بساطة',
     tech: 'التقنيات الحديثة التي نعتمدها',
-    faq: 'الأسئلة الأكثر شيوعًا',
-    final: 'هل أنت جاهز لتحويل فكرتك إلى واقع؟',
-    finalSub: 'شاركنا تفاصيل مشروعك أو فكرتك، وسيقدم لك خبراؤنا استشارة فنية وخطة عمل متكاملة مجانًا.',
-    whatsapp: 'تواصل عبر واتساب',
-    message: 'إرسال تفاصيل المشروع',
-    footer: 'نبتكر برمجيات وحلولًا رقمية استثنائية تصنع الفارق لعلامتك التجارية.',
+    faq: 'الأسئلة الأكثر تكرارًا',
+    final: 'عندك فكرة مشروع وعاوز تبدأها صح؟',
+    finalSub: 'تواصل معنا واشرح لنا فكرتك؛ بنقدملك استشارة فنية وخطة عمل واضحة تناسب ميزانيتك مجاناً وبدون أي التزام.',
+    whatsapp: 'تحدث معنا على واتساب',
+    message: 'اطلب استشارة مجانية لمشروعك',
+    footer: 'نبتكر برمجيات وحلولاً رقمية بسيطة ومتقنة تصنع الفارق لعلامتك التجارية.',
     more: 'المزيد من التفاصيل',
     all: 'كافة المشاريع',
     category: ['مواقع إلكترونية', 'منصات رقمية', 'أنظمة أعمال'],
@@ -206,9 +206,11 @@ export default function HomePage({ initialLocale = 'ar' }: { initialLocale?: Loc
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const categories = ['All', 'Websites', 'Platforms', 'Business systems']
-  const visibleProjects =
-    filter === 'All' ? projects.slice(0, 6) : projects.filter((project) => project.category === filter).slice(0, 6)
+  const featuredHomeProjects = [
+    projects.find((p) => p.title.toLowerCase().includes('fun group')),
+    projects.find((p) => p.title.includes('SchoolQ8') || p.title.includes('الكويتية')),
+    projects.find((p) => p.title.includes('(HZ)') || p.title.includes('حسين غازي')),
+  ].filter(Boolean) as typeof projects
 
   const basePath = locale === 'en' ? '/en' : ''
   const homeHref = basePath || '/'
@@ -359,19 +361,21 @@ export default function HomePage({ initialLocale = 'ar' }: { initialLocale?: Loc
             </div>
 
             <div className="home-hero-art">
+              <div className="hero-radar-ripple" aria-hidden="true" />
               <Image
                 className="home-hero-image"
-                src={dark ? '/home-hero-dark.png' : '/home-hero-light.png'}
+                src="/illustrations/hero-home-3d.jpg"
                 alt={
                   rtl
-                    ? 'تصميم متجر وتطبيقات ذكية على شاشات الحاسوب والهاتف لشركة SperaCode'
-                    : 'Interactive digital store and mobile interface designed by SperaCode'
+                    ? 'مهندس برمجيات سبيرا كود مع شاشات تفاعلية وانطلاق مشروع رقمي'
+                    : 'SperaCode software engineer with futuristic interactive dashboard and rocket launch'
                 }
-                width={1312}
-                height={816}
+                width={1200}
+                height={800}
                 priority
                 sizes="(max-width: 768px) 100vw, 650px"
               />
+              <div className="hero-scan-beam" aria-hidden="true" />
             </div>
           </div>
 
@@ -454,27 +458,9 @@ export default function HomePage({ initialLocale = 'ar' }: { initialLocale?: Loc
               subtitle={t.projectsSub}
             />
 
-            {/* Category Filter Pills */}
-            <div
-              className="filter-row"
-              role="group"
-              aria-label={rtl ? 'تصفية المشاريع' : 'Filter projects'}
-            >
-              {categories.map((category, i) => (
-                <button
-                  className={filter === category ? 'filter-chip active' : 'filter-chip'}
-                  key={category}
-                  onClick={() => setFilter(category)}
-                  aria-pressed={filter === category}
-                >
-                  {rtl ? (i === 0 ? t.all : t.category[i - 1]) : category}
-                </button>
-              ))}
-            </div>
-
-            {/* Projects Grid */}
+            {/* Featured 3 Projects Grid */}
             <div className="projects-grid">
-              {visibleProjects.map((project, index) => (
+              {featuredHomeProjects.map((project, index) => (
                 <article
                   className="project-card"
                   key={project.title}

@@ -22,6 +22,7 @@ import {
   MessageCircle,
   Moon,
   PenTool,
+  Phone,
   QrCode,
   Send,
   Smartphone,
@@ -34,8 +35,15 @@ import { SperaLogo } from '@/components/spera-logo'
 import { SiteFooter } from '@/components/site-footer'
 import { CustomSelect } from '@/components/custom-select'
 import { WhatsAppFloatingButton } from '@/components/whatsapp-floating-button'
-import { buildWhatsAppUrl } from '@/app/site-config'
-import { PageHeroVisual } from '../page-hero-visual'
+import {
+  buildWhatsAppUrl,
+  SITE_EMAIL,
+  SITE_PHONE_LOCAL,
+  SITE_PHONE_INTL,
+  SITE_PHONE_DISPLAY_INTL,
+} from '@/app/site-config'
+import { sendViaEmailJS } from './emailjs-client'
+import { ContactHeroVisual } from '@/components/hero-visuals/contact-hero-visual'
 
 type Locale = 'ar' | 'en'
 
@@ -53,7 +61,7 @@ const content = {
     name: 'الاسم الكريم',
     nameHint: 'ما هو اسمك الكريم؟',
     phone: 'رقم الهاتف أو واتساب',
-    phoneHint: '+20 100 000 0000',
+    phoneHint: '01515327087',
     company: 'اسم الشركة أو المشروع (اختياري)',
     companyHint: 'شركتك أو فكرة مشروعك',
     service: 'الخدمة المطلوبة',
@@ -84,9 +92,9 @@ const content = {
     direct: 'تواصل فوري ومباشر',
     directText: 'يمكنك محادثتنا فورًا على واتساب أو التواصل عبر البريد الرسمي.',
     whatsappLabel: 'محادثة فورية على واتساب',
-    whatsappCta: 'تحدث مع مهندسينا الآن',
+    whatsappCta: `${SITE_PHONE_LOCAL} (محادثة مباشرة)`,
     emailLabel: 'البريد الإلكتروني الرسمي',
-    emailCta: 'contact@speracode.com',
+    emailCta: SITE_EMAIL,
     note: 'متوسط سرعة الرد لدينا أقل من ساعتين خلال أوقات العمل.',
     stepsTitle: 'ماذا بعد إرسال رسالتك؟',
     steps: [
@@ -128,7 +136,7 @@ const content = {
     name: 'Your Name',
     nameHint: 'What should we call you?',
     phone: 'Phone or WhatsApp Number',
-    phoneHint: '+20 100 000 0000',
+    phoneHint: '+20 151 532 7087',
     company: 'Company / Organization (Optional)',
     companyHint: 'Your company or project name',
     service: 'Required Service',
@@ -159,9 +167,9 @@ const content = {
     direct: 'Direct Channels',
     directText: 'Prefer instant chat? Reach out directly via WhatsApp or email.',
     whatsappLabel: 'Instant WhatsApp Chat',
-    whatsappCta: 'Chat directly with our team',
+    whatsappCta: `${SITE_PHONE_LOCAL} (Direct Chat)`,
     emailLabel: 'Official Support Email',
-    emailCta: 'contact@speracode.com',
+    emailCta: SITE_EMAIL,
     note: 'Average response time is under 2 hours during active business hours.',
     stepsTitle: 'What happens after sending?',
     steps: [
@@ -206,6 +214,7 @@ export default function ContactPage({ initialLocale = 'ar' }: { initialLocale?: 
   const [selectedService, setSelectedService] = useState('')
   const [selectedTimeline, setSelectedTimeline] = useState('')
   const [messageText, setMessageText] = useState('')
+  const [isSending, setIsSending] = useState(false)
   const [showBackToTop, setShowBackToTop] = useState(false)
 
   const t = content[locale]
@@ -228,20 +237,20 @@ export default function ContactPage({ initialLocale = 'ar' }: { initialLocale?: 
   }
 
   const serviceOptionsWithIcons = [
-    { value: t.serviceOptions[1], label: t.serviceOptions[1], icon: Globe2 },
-    { value: t.serviceOptions[2], label: t.serviceOptions[2], icon: Smartphone },
-    { value: t.serviceOptions[3], label: t.serviceOptions[3], icon: QrCode },
-    { value: t.serviceOptions[4], label: t.serviceOptions[4], icon: Bot },
-    { value: t.serviceOptions[5], label: t.serviceOptions[5], icon: PenTool },
-    { value: t.serviceOptions[6], label: t.serviceOptions[6], icon: Code2 },
-    { value: t.serviceOptions[7], label: t.serviceOptions[7], icon: Sparkles },
+    { value: t.serviceOptions[1], label: t.serviceOptions[1], icon: Globe2, hint: rtl ? 'منصات سحابية فائقة السرعة' : 'Next.js & Cloud' },
+    { value: t.serviceOptions[2], label: t.serviceOptions[2], icon: Smartphone, hint: rtl ? 'iOS & Android هجين وأصيل' : 'Cross-Platform Apps' },
+    { value: t.serviceOptions[3], label: t.serviceOptions[3], icon: QrCode, hint: rtl ? 'طلب فوري ومباشر على واتساب' : 'Interactive QR Menu' },
+    { value: t.serviceOptions[4], label: t.serviceOptions[4], icon: Bot, hint: rtl ? 'أتمتة الأعمال ووكلاء AI' : 'LLMs & AI Agents' },
+    { value: t.serviceOptions[5], label: t.serviceOptions[5], icon: PenTool, hint: rtl ? 'واجهات احترافية وسهلة الاستخدام' : 'Figma & Design Systems' },
+    { value: t.serviceOptions[6], label: t.serviceOptions[6], icon: Code2, hint: rtl ? 'إدارة المخازن والمبيعات' : 'Custom ERP & POS' },
+    { value: t.serviceOptions[7], label: t.serviceOptions[7], icon: Sparkles, hint: rtl ? 'جلسة فنية ودراسة جدوى مجانية' : 'Technical Consultation' },
   ]
 
   const timelineOptionsWithIcons = [
-    { value: t.timelineOptions[1], label: t.timelineOptions[1], icon: Zap },
-    { value: t.timelineOptions[2], label: t.timelineOptions[2], icon: Clock3 },
-    { value: t.timelineOptions[3], label: t.timelineOptions[3], icon: Calendar },
-    { value: t.timelineOptions[4], label: t.timelineOptions[4], icon: Compass },
+    { value: t.timelineOptions[1], label: t.timelineOptions[1], icon: Zap, hint: rtl ? 'مسار سريع ذو أولوية' : 'Fast-Track Priority' },
+    { value: t.timelineOptions[2], label: t.timelineOptions[2], icon: Clock3, hint: rtl ? 'الجدول الهندسي المعتاد' : 'Standard Sprint Cycle' },
+    { value: t.timelineOptions[3], label: t.timelineOptions[3], icon: Calendar, hint: rtl ? 'تطوير وتسليم مرحلي' : 'Phased Milestone Scope' },
+    { value: t.timelineOptions[4], label: t.timelineOptions[4], icon: Compass, hint: rtl ? 'دراسة خيارات وتكلفة' : 'Planning & MVP Estimate' },
   ]
 
   useEffect(() => {
@@ -325,10 +334,27 @@ export default function ContactPage({ initialLocale = 'ar' }: { initialLocale?: 
 ${t.message}:
 ${messageText || '—'}`
 
-  function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleFormSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    window.open(buildWhatsAppUrl(generatedBrief), '_blank', 'noopener,noreferrer')
-    setSubmitted(true)
+    setIsSending(true)
+
+    try {
+      await sendViaEmailJS({
+        name,
+        phone,
+        company,
+        service: selectedService,
+        timeline: selectedTimeline,
+        message: messageText,
+        summaryText: generatedBrief,
+      })
+    } catch (e) {
+      console.warn('[EmailJS Submit Notification]', e)
+    } finally {
+      setIsSending(false)
+      setSubmitted(true)
+      window.open(buildWhatsAppUrl(generatedBrief), '_blank', 'noopener,noreferrer')
+    }
   }
 
   function copyBrief() {
@@ -419,19 +445,21 @@ ${messageText || '—'}`
         {/* Contact Hero */}
         <section className="contact-hero container">
           <div className="contact-hero-copy">
-            <nav className="breadcrumb" aria-label="Breadcrumb" style={{ marginBottom: '16px' }}>
-              <Link href={homeHref} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                <Home size={14} />
-                <span>{t.home}</span>
-              </Link>
-              <span aria-hidden="true">/</span>
-              <span>{t.page}</span>
-            </nav>
+            <div className="hero-kicker-stack">
+              <nav className="breadcrumb" aria-label="Breadcrumb">
+                <Link href={homeHref} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                  <Home size={14} />
+                  <span>{t.home}</span>
+                </Link>
+                <span aria-hidden="true">/</span>
+                <span>{t.page}</span>
+              </nav>
 
-            <span className="section-kicker">
-              <span className="live-dot" />
-              {t.kicker}
-            </span>
+              <div className="eyebrow">
+                <span className="live-dot" />
+                {t.kicker}
+              </div>
+            </div>
             <h1>{t.title}</h1>
             <p>{t.intro}</p>
 
@@ -468,7 +496,7 @@ ${messageText || '—'}`
           </div>
 
           <div className="contact-hero-visual">
-            <PageHeroVisual dark={dark} rtl={rtl} />
+            <ContactHeroVisual dark={dark} rtl={rtl} />
           </div>
         </section>
 
@@ -627,8 +655,8 @@ ${messageText || '—'}`
                 </div>
               )}
 
-              <button className="contact-submit" type="submit">
-                {t.send}
+              <button className="contact-submit" type="submit" disabled={isSending}>
+                {isSending ? (rtl ? 'جاري الإرسال عبر EmailJS...' : 'Sending via EmailJS...') : t.send}
                 {rtl ? <ArrowLeft aria-hidden="true" /> : <ArrowRight aria-hidden="true" />}
               </button>
 
@@ -638,9 +666,20 @@ ${messageText || '—'}`
               </p>
 
               {submitted && (
-                <p className="contact-success" role="status" aria-live="polite">
-                  {t.sent}
-                </p>
+                <div className="contact-success" role="status" aria-live="polite">
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                    <Check size={16} aria-hidden="true" style={{ color: 'var(--emerald)' }} />
+                    <strong style={{ color: 'var(--emerald)' }}>
+                      {rtl ? 'تم إرسال رسالتك وتفاصيل مشروعك بنجاح إلى بريدنا الرسمي:' : 'Message sent successfully to our official email:'}
+                    </strong>
+                  </div>
+                  <code style={{ fontSize: '12px', color: 'var(--blue)', fontWeight: 700 }}>info.speracode@gmail.com</code>
+                  <p style={{ margin: '6px 0 0', fontSize: '12px', color: 'var(--muted)' }}>
+                    {rtl
+                      ? 'تم تجهيز محادثة واتساب المباشرة أيضاً لمتابعة الرد الفوري مع فريقنا الهندسي.'
+                      : 'A direct WhatsApp chat was also prepared for instant assistance.'}
+                  </p>
+                </div>
               )}
             </form>
           </div>
@@ -664,18 +703,33 @@ ${messageText || '—'}`
                   </span>
                   <span className="contact-channel-text">
                     <small>{t.whatsappLabel}</small>
-                    <strong>{t.whatsappCta}</strong>
+                    <strong>{SITE_PHONE_LOCAL} • {rtl ? 'محادثة فورية' : 'Instant Chat'}</strong>
                   </span>
                   {rtl ? <ArrowUpLeft aria-hidden="true" /> : <ArrowUpRight aria-hidden="true" />}
                 </a>
 
-                <a className="contact-channel" href="mailto:contact@speracode.com">
+                <a
+                  className="contact-channel"
+                  href={`tel:${SITE_PHONE_INTL}`}
+                  title={SITE_PHONE_DISPLAY_INTL}
+                >
+                  <span className="contact-channel-icon">
+                    <Phone aria-hidden="true" />
+                  </span>
+                  <span className="contact-channel-text">
+                    <small>{rtl ? 'الاتصال الهاتفي المباشر' : 'Direct Phone Call'}</small>
+                    <strong dir="ltr">{SITE_PHONE_DISPLAY_INTL}</strong>
+                  </span>
+                  {rtl ? <ArrowUpLeft aria-hidden="true" /> : <ArrowUpRight aria-hidden="true" />}
+                </a>
+
+                <a className="contact-channel" href={`mailto:${SITE_EMAIL}`} title={SITE_EMAIL}>
                   <span className="contact-channel-icon">
                     <Mail aria-hidden="true" />
                   </span>
                   <span className="contact-channel-text">
                     <small>{t.emailLabel}</small>
-                    <strong>{t.emailCta}</strong>
+                    <strong>{SITE_EMAIL}</strong>
                   </span>
                   {rtl ? <ArrowUpLeft aria-hidden="true" /> : <ArrowUpRight aria-hidden="true" />}
                 </a>
@@ -734,11 +788,11 @@ ${messageText || '—'}`
         </section>
 
         {/* Contact FAQ */}
-        <section className="container section" style={{ paddingTop: '64px' }}>
+        <section className="container section" style={{ paddingTop: 'clamp(36px, 6vw, 64px)' }}>
           <div className="faq-layout">
             <div>
               <span className="section-kicker">{rtl ? 'إجابات سريعة' : 'QUICK ANSWERS'}</span>
-              <h2 style={{ fontSize: '28px', fontWeight: 800, margin: '8px 0' }}>{t.faqTitle}</h2>
+              <h2 style={{ fontSize: 'clamp(20px, 4vw, 28px)', fontWeight: 800, margin: '8px 0' }}>{t.faqTitle}</h2>
               <p style={{ color: 'var(--muted)', fontSize: '15px' }}>
                 {rtl
                   ? 'معلومات أساسية حول آلية العمل، الاستشارات المجانية، والتعاقد مع SperaCode.'

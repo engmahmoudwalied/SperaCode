@@ -99,11 +99,16 @@ export function CustomSelect({
         <div className="select-trigger-content">
           {FieldIcon && <FieldIcon size={18} className="select-field-icon" />}
           {selectedOption?.icon && (
-            <selectedOption.icon size={17} className="select-option-icon" />
+            <span className="select-trigger-icon-tile">
+              <selectedOption.icon size={16} />
+            </span>
           )}
           <span className="select-label-text">
             {selectedOption ? selectedOption.label : placeholder}
           </span>
+          {selectedOption?.hint && (
+            <span className="select-trigger-hint">{selectedOption.hint}</span>
+          )}
         </div>
 
         <ChevronDown
@@ -113,7 +118,7 @@ export function CustomSelect({
         />
       </button>
 
-      {/* Animated Dropdown Menu */}
+      {/* Animated Dropdown Popover */}
       {isOpen && (
         <div className="custom-select-dropdown" role="listbox">
           <div className="custom-select-options-scroller">
@@ -130,12 +135,20 @@ export function CustomSelect({
                   onClick={() => handleSelect(opt.value)}
                 >
                   <div className="option-label-group">
-                    {OptIcon && <OptIcon size={16} className="option-custom-icon" />}
-                    <span className="option-title">{opt.label}</span>
-                    {opt.hint && <span className="option-hint">{opt.hint}</span>}
+                    {OptIcon && (
+                      <span className="option-icon-box" aria-hidden="true">
+                        <OptIcon size={16} />
+                      </span>
+                    )}
+                    <div className="option-text-stack">
+                      <span className="option-title">{opt.label}</span>
+                      {opt.hint && <span className="option-hint">{opt.hint}</span>}
+                    </div>
                   </div>
 
-                  {isSelected && <Check size={16} className="option-check-icon" />}
+                  <span className={`option-check-badge ${isSelected ? 'is-active' : ''}`} aria-hidden="true">
+                    {isSelected ? <Check size={14} /> : <span className="option-radio-dot" />}
+                  </span>
                 </div>
               )
             })}

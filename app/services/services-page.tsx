@@ -38,6 +38,7 @@ import {
 import { SperaLogo } from '@/components/spera-logo'
 import { SiteFooter } from '@/components/site-footer'
 import { WhatsAppFloatingButton } from '@/components/whatsapp-floating-button'
+import { ServicesHeroVisual } from '@/components/hero-visuals/services-hero-visual'
 import { buildWhatsAppUrl } from '@/app/site-config'
 
 type Locale = 'ar' | 'en'
@@ -133,216 +134,216 @@ export default function ServicesPage({ initialLocale = 'ar' }: ServicesPageProps
       category: 'web',
       icon: Globe2,
       badge: rtl ? 'الأكثر طلباً' : 'MOST REQUESTED',
-      title: rtl ? 'تطوير المواقع والمنصات السحابية' : 'Web Applications & Cloud Platforms',
+      title: rtl ? 'تصميم وتطوير المواقع والمتاجر الإلكترونية' : 'Web Applications & Modern Websites',
       subtitle: rtl
-        ? 'مواقع شركات، منصات إلكترونية، وبوابات تجارية متطورة بأحدث تقنيات Next.js 16 وReact 19'
-        : 'Enterprise websites, web apps, and modern portals engineered with Next.js 16 and React 19',
+        ? 'مواقع شركات ومتاجر إلكترونية بتصميم شيك وسرعة فائقة تجذب زوارك وتحولهم لعملاء'
+        : 'Fast, responsive corporate websites and e-commerce stores designed to attract and convert customers',
       description: rtl
-        ? 'نبني مواقع ومنصات رقمية فائقة السرعة، متوافقة 100% مع كافة الشاشات، ومهيأة بأعلى معايير السيو (SEO) والذكاء الاصطناعي (GEO) لتحويل الزوار إلى عملاء حقيقيين.'
-        : 'We architect lightning-fast, highly resilient web applications optimized for search engines and generative AI bots, driving high conversion rates and seamless user retention.',
+        ? 'نبني لك موقعاً سريعاً وسهل التصفح على أي موبايل أو كمبيوتر، مجهّز للظهور في بحث جوجل، مع لوحة تحكم بسيطة تقدر تعدل منها منتجاتك وأسعارك بنفسك بدون أي تعقيد.'
+        : 'We build clean, ultra-fast websites and web applications tailored to your business, optimized for Google search and equipped with an easy admin panel to manage content without technical hassle.',
       features: rtl
         ? [
-            'هندسة متطورة بـ Next.js 16 مع Fluid Compute وسرعة استجابة فائقة',
-            'تهيئة كاملة لمحركات البحث (SEO) والذكاء الاصطناعي (GEO)',
-            'لوحة تحكم إدارية سهلة لتحديث المحتوى والمنتجات والأسعار',
-            'توافق كامل 100% مع الهواتف الذكية والأجهزة اللوحية',
+            'سرعة تصفح فائقة تفتح في ثوانٍ وتريح الزائر',
+            'تهيئة كاملة للظهور في أولى نتائج بحث جوجل لجلب عملاء جدد',
+            'لوحة تحكم سهلة جداً تقدر تضيف منها وتعدل الأسعار والمحتوى بكل بساطة',
+            'شكل متناسق ومريح 100% على شاشات الموبايل والتابلت والكمبيوتر',
           ]
         : [
-            'Engineered on Next.js 16 with Fluid Compute and sub-second load times',
-            'Engineered for both traditional SEO and Generative Engine Optimization (GEO)',
-            'Intuitive custom dashboard for frictionless content and media management',
-            'Fully responsive native-feel UI across all screens and mobile viewports',
+            'Sub-second load speeds providing a smooth, effortless browsing experience',
+            'Built-in Google SEO optimization to attract organic customers consistently',
+            'Intuitive admin dashboard so you can update prices and products easily',
+            '100% responsive and tested across all smartphone and tablet screens',
           ],
       deliverables: rtl
-        ? ['كود مصدري نظيف بنسبة 100%', 'شهادة حماية SSL وتشفير سحابي', 'ربط بوابات الدفع والشحن', 'دليل استخدام وتدريب كامل']
-        : ['100% Full Source Code Ownership', 'Free SSL & Cloudflare Edge CDN', 'Payment & Shipping Gateway Setup', 'Comprehensive Admin Documentation'],
-      tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Vercel Edge'],
+        ? ['الموقع بالكامل وكوده ملكك أنت 100%', 'شهادة حماية وأمان SSL مجانية', 'ربط بوابات الدفع الإلكتروني والشحن', 'شرح وتدريب كامل لطريقة إدارة الموقع']
+        : ['100% Full Code Ownership', 'Free SSL Security & Edge CDN', 'Payment & Shipping Gateway Integration', 'Full Video Walkthrough & Admin Training'],
+      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Cloud Hosting'],
       contactParam: 'web',
     },
     {
       id: 'mobile',
       category: 'mobile',
       icon: Smartphone,
-      badge: rtl ? 'أداء أصلي' : 'NATIVE-GRADE',
-      title: rtl ? 'تطبيقات الجوال الذكية (iOS & Android)' : 'Mobile Applications (iOS & Android)',
+      badge: rtl ? 'سهل وسريع' : 'FAST & NATIVE',
+      title: rtl ? 'تطبيقات الهواتف الذكية (iOS & Android)' : 'Mobile Applications (iOS & Android)',
       subtitle: rtl
-        ? 'تطبيقات جوال متقدمة تلبي أعلى معايير تجربة الاستخدام وتضمن أداءً سلساً على متجري App Store وGoogle Play'
-        : 'Cross-platform native mobile apps built with Flutter for premium performance on App Store and Google Play',
+        ? 'تطبيقات سهلة وخفيفة لعملائك تخليهم يتصفحوا خدماتك ويطلبوا بلمسة واحدة'
+        : 'Intuitive iOS & Android apps that make buying and booking seamless for your users',
       description: rtl
-        ? 'نطور تطبيقات جوال ذكية تقدم تجربة استخدام استثنائية وسرعة فائقة بفضل كود موحد وقوي عبر إطار عمل Flutter، مع دعم كامل للإشعارات الفورية وبوابات الدفع والعمل بدون اتصال.'
-        : 'We deliver fluid, feature-rich iOS and Android mobile apps with Flutter, ensuring zero frame drops, offline capabilities, push notifications, and frictionless in-app payments.',
+        ? 'بنبرمجلك تطبيق جوال احترافي للآيفون والأندرويد بتجربة استخدام ممتعة، مع إشعارات مباشرة على جوال العميل بأحدث عروضك، وإمكانية الدفع بسهولة وبأعلى درجات الأمان.'
+        : 'We engineer intuitive mobile apps for iPhone and Android with smooth navigation, instant push notifications for your offers, and secure in-app payments.',
       features: rtl
         ? [
-            'كود برمجي موحد فائق الأداء بـ Flutter لأجهزة iPhone وAndroid',
-            'دعم كامل لنظام الإشعارات اللحظية (Push Notifications) لجذب المستخدمين',
-            'ربط بوابات الدفع الإلكتروني (Apple Pay، Mada، فيزا/ماستركارد)',
-            'إمكانية تصفح البيانات والعمل في وضع عدم الاتصال (Offline Mode)',
+            'تطبيق واحد سريع يعمل بسلاسة على كل أجهزة الآيفون والأندرويد',
+            'إرسال إشعارات فورية لجميع العملاء بعروضك ومنتجاتك الجديدة في أي وقت',
+            'دفع إلكتروني سهل وسريع (Apple Pay، فيزا، ماستركارد، مدى)',
+            'تصفح سريع يفتح بدون تهنيج حتى لو سرعة الإنترنت عند العميل ضعيفة',
           ]
         : [
-            'Unified, high-velocity codebase with Flutter for iOS & Android',
-            'Rich push notification workflows to maximize engagement',
-            'Seamless payment gateway integration (Apple Pay, Mada, Credit Cards)',
-            'Offline caching and smart data synchronization',
+            'Unified app delivering a fluid native experience on iPhone and Android',
+            'Rich push notifications to broadcast your latest promotions instantly',
+            'Frictionless checkout with Apple Pay, cards, and digital wallets',
+            'Optimized data caching so it loads fast even on weak connections',
           ],
       deliverables: rtl
-        ? ['رفع التطبيق على App Store و Google Play', 'لوحة تحكم لإدارة المستخدمين والإشعارات', 'تجهيز الهوية البصرية للأيقونة والشاشات', 'دعم فني وضمان تحديثات ما بعد النشر']
-        : ['App Store & Google Play Deployment', 'Cloud Admin Panel for Notifications', 'App Store Artwork & Icon Assets', 'Post-Launch Version Warranty'],
-      tech: ['Flutter', 'Dart', 'Firebase', 'REST APIs', 'App Store Connect', 'Google Play Console'],
+        ? ['نشر التطبيق رسمياً على App Store وGoogle Play', 'لوحة تحكم سهلة لإدارة المنتجات وإرسال الإشعارات', 'تصميم كامل وعصري لشاشات وأيقونة التطبيق', 'فترة ضمان ومتابعة فنية مجانية بعد النشر']
+        : ['App Store & Google Play Publishing', 'Simple Admin Panel for Notifications', 'App Icon & Screen Artwork Assets', 'Post-Launch Warranty & Support'],
+      tech: ['Flutter', 'Firebase', 'App Store', 'Google Play', 'Cloud APIs'],
       contactParam: 'mobile',
     },
     {
       id: 'qr',
       category: 'qr',
       icon: QrCode,
-      badge: rtl ? 'حل حصري للمطاعم' : 'RESTAURANTS & CAFÉS',
-      title: rtl ? 'المنيو الرقمي التفاعلي QR' : 'Interactive Digital QR Menu',
+      badge: rtl ? 'حصري للمطاعم والكافيهات' : 'FOR RESTAURANTS & CAFÉS',
+      title: rtl ? 'المنيو الرقمي التفاعلي بالباركود QR' : 'Interactive Digital QR Menu',
       subtitle: rtl
-        ? 'قائمة طعام تفاعلية ثنائية اللغة بمسح QR دون تحميل أي تطبيق، مع طلب فوري عبر واتساب وتحديث لحظي'
-        : 'Bilingual mobile digital menu scanned instantly via QR without app downloads, featuring direct WhatsApp ordering',
+        ? 'منيو إلكتروني سريع لمطعمك أو كافيهك يوفّر مصاريف الطباعة وتوصلك الطلبات ع الواتساب'
+        : 'Scannable digital menu that saves print expenses and sends orders directly to WhatsApp',
       description: rtl
-        ? 'حل ثوري للمطاعم والكافيهات يوفر آلاف الجنيهات والريالات من تكاليف الطباعة المتكررة؛ يمكّن ضيوفك من تصفح صور الأطباق والأسعار بلحظات وإرسال الطلبات إلى واتساب المطعم مباشرة.'
-        : 'Transform your restaurant experience: guests scan table QR codes to view dishes with high-res photos and prices, then submit curated orders directly to your WhatsApp staff in one tap.',
+        ? 'الحل الأسهل لمطعمك؛ زبونك يمسح الكود بكاميرا الموبايل فيفتح المنيو بالصور والأسعار في لحظة، يختار وجبته ويبعت الطلب برقم الطاولة مباشرة ع الواتساب بدون انتظار الويتر.'
+        : 'Transform your dining experience: guests scan a table QR code with their camera to browse high-res photos and prices, then submit their order directly to your WhatsApp staff.',
       features: rtl
         ? [
-            'فتح فوري بكاميرا الهاتف بمسح QR دون الحاجة لتحميل أي تطبيق أو تسجيل',
-            'تحديث فوري للأسعار، والأطباق، وحالة توفر الوجبات بلحظات من جوالك',
-            'واجهة ثنائية اللغة (عربي وإنجليزي) مدعومة بصور جذابة وتصنيفات واضحة',
-            'إرسال سلة الطلبات مباشرة إلى رقم واتساب المطعم برقم الطاولة أو التوصيل',
+            'يفتح فوراً بكاميرا الموبايل بدون تحميل أي برنامج أو تسجيل دخول',
+            'تعديل فوري للأسعار والأطباق المتوفرة في ثوانٍ ومن موبايلك في أي وقت',
+            'قائمة طعام ثنائية اللغة (عربي وإنجليزي) بصور واضحة وأقسام مرتبة',
+            'الزبون يجمع طلبه ويبعته مباشرة على رقم واتساب المطعم مع رقم الطاولة أو التوصيل',
           ]
         : [
-            'Instant camera scan with zero app install or login friction',
-            'Real-time price, availability, and menu item updates from mobile',
-            'Full bilingual Arabic & English interface with photo galleries',
-            'Direct WhatsApp ordering with table numbers and special notes',
+            'Opens instantly via phone camera with zero app download or login friction',
+            'Update prices, seasonal dishes, and sold-out items in seconds from your phone',
+            'Full bilingual Arabic & English interface with mouth-watering photos',
+            'Direct WhatsApp ordering with table numbers, guest notes, and delivery address',
           ],
       deliverables: rtl
-        ? ['رابط دائم للمنيو وتصميم QR احترافي للطاولات', 'لوحة تحكم فائقة السهولة لتعديل القائمة والأسعار', 'دعم فني واستضافة سريعة مشمولة', 'إحصائيات لعدد الزوار والأصناف الأكثر طلباً']
-        : ['Permanent Menu URL & Print-Ready QR Assets', 'Ultra-Simple Mobile Admin Portal', 'Fast Cloud Hosting & Free SSL Included', 'Traffic & Popular Item Analytics'],
-      tech: ['Next.js PWA', 'Instant QR Engine', 'WhatsApp Business API', 'Edge Caching'],
+        ? ['رابط دائم للمنيو وتصميم ستاندات QR احترافية للطاولات', 'لوحة تحكم خفيفة وسهلة لتعديل الأصناف والأسعار في أي لحظة', 'استضافة سريعة ودعم فني مستمر بدون توقف', 'إحصائيات لعدد الزوار والأصناف الأكثر طلباً']
+        : ['Permanent Menu URL & Print-Ready QR Assets', 'Ultra-Simple Mobile Admin Portal', 'Fast Cloud Hosting & SSL Included', 'Visitor & Top-Selling Dish Analytics'],
+      tech: ['Instant QR', 'Mobile PWA', 'WhatsApp Business', 'Cloud Hosting'],
       contactParam: 'qr',
     },
     {
       id: 'ai',
       category: 'ai',
       icon: Bot,
-      badge: rtl ? 'ذكاء اصطناعي وأتمتة' : 'AI & AUTOMATION',
-      title: rtl ? 'حلول الذكاء الاصطناعي والأتمتة' : 'AI Solutions & LLM Agents',
+      badge: rtl ? 'رد آلي ذكي' : 'SMART AI ASSISTANT',
+      title: rtl ? 'المساعد الذكي والرد الآلي 24 ساعة' : 'AI Assistant & Automated Support',
       subtitle: rtl
-        ? 'روبوتات محادثة ذكية وأنظمة أتمتة تخدم عملاءك على مدار الساعة وترفع كفاءة العمليات التشغيلية'
-        : 'Enterprise-grade conversational AI agents, custom knowledge chatbots, and autonomous operational workflows',
+        ? 'رد آلي ذكي يجاوب على استفسارات عملائك في الموقع والواتساب ويجمعلك طلباتهم بدون تأخير'
+        : 'Smart 24/7 AI chatbot that answers inquiries on your site and WhatsApp instantly',
       description: rtl
-        ? 'نبتكر وكلاء ذكاء اصطناعي مدربين خصيصاً على بيانات شركتك ومنتجاتك؛ يردون على استفسارات العملاء بدقة متناهية على الموقع وواتساب ويديرون العمليات الروتينية بكفاءة لا تتوقف.'
-        : 'We integrate autonomous AI agents trained securely on your company knowledge base, enabling 24/7 instant lead qualification, automated tier-1 customer support, and operational triage.',
+        ? 'مساعد ذكي يشتغل مكان موظف خدمة العملاء 24 ساعة بدون انقطاع، فاهم كل خدماتك وتفاصيل أسعارك، يجاوب على العميل فوراً ويرتبلك مواعيده وطلباته عشان ما تضيعش أي فرصة بيع.'
+        : 'An intelligent AI assistant trained on your products and business details, answering client inquiries 24/7 on your website and WhatsApp so you never miss a sales lead.',
       features: rtl
         ? [
-            'شات بوت ذكي مدرب على مستندات وخدمات شركتك بدقة فائقة (RAG)',
-            'رد تلقائي وفوري على استفسارات العملاء في موقعك أو قنوات واتساب',
-            'أتمتة فرز وتصنيف استفسارات المبيعات وتوجيهها للفريق المختص',
-            'تكامل سلس مع أنظمة الـ CRM وقواعد البيانات الحالية في مؤسستك',
+            'رد فوري على أسئلة زباينك في الموقع والواتساب على مدار 24 ساعة بدون انتظار',
+            'مدرب على خدمات وأسعار وتفاصيل شركتك ويجاوب بدقة وبأسلوب محترم',
+            'يجمع بيانات العملاء المهتمين وينبه فريق مبيعاتك فوراً لمتابعتهم',
+            'يريح موظفيك من تكرار الإجابة على نفس الأسئلة كل يوم ويوفر وقتك',
           ]
         : [
-            'Domain-trained AI chatbot with Retrieval-Augmented Generation (RAG)',
-            'Instant 24/7 automated responses on your website and messaging channels',
-            'Automated inbound lead qualification and ticket triage',
-            'Seamless integration with current CRMs and enterprise databases',
+            'Instant 24/7 automated responses on your website and WhatsApp channels',
+            'Trained on your company services, pricing, and FAQs for accurate replies',
+            'Captures customer contact details and alerts your sales team immediately',
+            'Frees your staff from answering repetitive questions daily',
           ],
       deliverables: rtl
-        ? ['روبوت ذكاء اصطناعي مهيأ ومدمج بموقعك أو قنواتك', 'لوحة متابعة سجلات المحادثات ودقة الإجابات', 'تحديث وتدريب مستمر لبيانات المعرفة', 'دليل الصيانة وضبط معايير الأمان']
-        : ['Fully Trained AI Assistant & Web Embed Widget', 'Conversational Analytics & Accuracy Dashboard', 'Continuous Knowledge Base Fine-Tuning', 'Security & Prompt Injection Defenses'],
-      tech: ['OpenAI GPT-4o', 'Anthropic Claude', 'LangChain', 'Vector DB', 'Python FastAPI'],
+        ? ['مساعد ذكي مربوط بموقعك أو رقم الواتساب بالكامل', 'لوحة تحكم لمراجعة سجل المحادثات وتطوير الإجابات', 'تدريب المساعد وإضافة أي معلومات جديدة في أي وقت', 'شرح كامل لطريقة إدارة وتعديل الردود']
+        : ['Trained AI Assistant Connected to Site & WhatsApp', 'Conversation History & Analytics Portal', 'Ongoing Knowledge Base Updates', 'Simple Admin Controls'],
+      tech: ['AI Chatbots', 'Automations', 'WhatsApp API', 'Secure Cloud'],
       contactParam: 'ai',
     },
     {
       id: 'erp',
       category: 'erp',
       icon: Code2,
-      badge: rtl ? 'أنظمة مخصصة' : 'BESPOKE ENTERPRISE',
-      title: rtl ? 'أنظمة إدارة الأعمال والـ ERP المخصصة' : 'Custom ERP & Management Systems',
+      badge: rtl ? 'بدون اشتراك شهري' : 'CUSTOM & NO SUBSCRIPTION',
+      title: rtl ? 'برامج إدارة وفواتير ومخازن مخصصة' : 'Custom Management & Invoicing Software',
       subtitle: rtl
-        ? 'لوحات تحكم وأنظمة إدارة مصممة خصيصاً لتلائم دورة أعمال شركتك وإدارتها بدقة وأمان'
-        : 'Custom business management tools, ERP software, and internal dashboards tailored to your workflows',
+        ? 'برنامج إدارة مفصّل على طريقة شغلك، ينظم فواتيرك ومخازنك بدون اشتراكات شهرية'
+        : 'Tailored management tools for your inventory and invoicing without recurring user fees',
       description: rtl
-        ? 'تخلص من قيود البرامج الجاهزة واشتراكاتها الباهظة؛ نبني لك نظام إدارة سحابي مصمم بدقة وفق دورة عمل شركتك: المخازن، الفواتير، المبيعات، الصلاحيات، وتقارير الأداء المباشرة.'
-        : 'Escape rigid off-the-shelf software and recurring license penalties. We build tailored ERP solutions mapping 100% to your workflows: inventory, invoicing, CRM, and real-time executive dashboards.',
+        ? 'ودّع البرامج الجاهزة المعقدة اللي بتكلفك اشتراك شهري لكل موظف؛ بنبنيلك برنامج سحابي بسيط تدير بيه مبيعاتك ومخازنك وحساباتك من أي مكان وبكل أمان.'
+        : 'Escape rigid off-the-shelf software with expensive per-user fees. We build a clean, custom management system tailored to your exact invoicing, inventory, and sales workflows.',
       features: rtl
         ? [
-            'إدارة متكاملة للمخزون، الفواتير، والمشتريات والمبيعات ونقاط البيع (POS)',
-            'نظام أدوار وصلاحيات دقيق للموظفين والإداريين لحماية البيانات الحساسة',
-            'تقارير تحليلية ورسوم بيانية فورية لأداء الشركة والمؤشرات المالية (KPIs)',
-            'ملكية كاملة للكود والنظام بدون أي رسوم اشتراك شهرية متكررة للمستخدمين',
+            'إدارة بسيطة للمخازن، الفواتير، المبيعات، والمشتريات ونقاط البيع السريعة',
+            'تحديد صلاحيات واضحة لكل موظف عشان تحافظ على سرية أرقامك وبياناتك',
+            'تقارير يومية وشهرية توضح أرباحك ومصروفاتك وحجم مبيعاتك بضغطة زر',
+            'البرنامج ملكك أنت بالكامل بدون أي اشتراك شهري متكرر لكل مستخدم',
           ]
         : [
-            'Unified multi-branch inventory, POS, invoicing, and purchase tracking',
-            'Granular role-based access control (RBAC) protecting sensitive operations',
-            'Real-time financial KPI telemetry and executive performance dashboards',
-            'Zero recurring per-seat licensing fees—100% perpetual business asset',
+            'Simple inventory, invoicing, sales, and fast POS checkout management',
+            'Granular staff permissions so your financial data remains confidential',
+            'One-click daily and monthly reports for revenue, expenses, and profits',
+            'Zero recurring monthly per-user fees—the entire system is 100% yours',
           ],
       deliverables: rtl
-        ? ['نظام إداري سحابي آمن مخصص لمؤسستك', 'تدريب كامل لفريق العمل على كافة أقسام النظام', 'نسخ احتياطي يومي مشفر لقواعد البيانات', 'ضمان فني ودعم مستمر وفق اتفاقية SLA']
-        : ['Secure Cloud ERP Custom-Built for Your Workflows', 'Staff Training & Onboarding Workshops', 'Automated Daily Encrypted Database Backups', 'SLA Technical Support & Maintenance'],
-      tech: ['PostgreSQL', 'Node.js', 'Next.js', 'Docker', 'Redis', 'Tailwind CSS'],
+        ? ['برنامج سحابي آمن وسهل مخصص لطريقة عملك', 'تدريب كامل ومباشر لموظفيك على استخدام البرنامج', 'نسخ احتياطي يومي لحماية كل فواتيرك وبياناتك', 'دعم فني وضمان متواصل لخدمتك في أي وقت']
+        : ['Tailored Cloud Software for Your Workflow', 'Hands-on Staff Training & Onboarding', 'Automated Daily Backups Protecting Invoices', 'Direct Ongoing Support & Warranty'],
+      tech: ['PostgreSQL', 'Node.js', 'Next.js', 'Cloud Hosting', 'Secure Backups'],
       contactParam: 'erp',
     },
     {
       id: 'uiux',
       category: 'uiux',
       icon: PenTool,
-      badge: rtl ? 'تصميم تجربة الاستخدام' : 'HUMAN-CENTERED DESIGN',
+      badge: rtl ? 'تصميم مريح وجذاب' : 'INTUITIVE DESIGN',
       title: rtl ? 'تصميم واجهات وتجربة المستخدم UI/UX' : 'UI/UX Interface & Experience Design',
       subtitle: rtl
-        ? 'تصميم واجهات رقمية جذابة وسهلة الاستخدام مبنية على دراسة سلوك العميل لزيادة التفاعل والتحويل'
-        : 'Data-driven interface design, interactive Figma prototypes, and scalable design systems',
+        ? 'تصميم عصري ومريح للعين يخلي العميل يرتاح لموقعك وتطبيقك ويشتري بسهولة'
+        : 'Modern, user-friendly designs that build trust and make buying effortless',
       description: rtl
-        ? 'نحول فكرتك إلى تجربة رقمية استثنائية تأسر العميل؛ نصمم نماذج سلكية وتفاعلية تختبر رحلة العميل قبل كتابة سطر كود واحد، مع بناء نظام تصميم موحد يضمن اتساق علامتك التجارية.'
-        : 'We translate your vision into captivating, intuitive digital interfaces. From wireframes to pixel-perfect interactive prototypes, we test and refine before engineering, maximizing conversion.',
+        ? 'قبل ما نكتب سطر كود واحد، بنصمملك شكل الشاشات ونوريك شكل موقعك أو تطبيقك وتجربه كأنك عميل، عشان نتأكد إن كل حاجة واضحة وسهلة ومريحة في الاستخدام.'
+        : 'Before writing any code, we craft interactive prototypes so you can test every screen as a user, ensuring the flow is simple, beautiful, and drives sales.',
       features: rtl
         ? [
-            'دراسة سلوك العميل ورسم رحلة المستخدم (User Journey & Architecture)',
-            'نماذج تفاعلية حية (Clickable Prototypes) على Figma للتجربة والتقييم',
-            'نظام تصميم موحد (Design System & UI Kit) لتسهيل التطوير المستقبلي',
-            'مراعاة معايير سهولة الوصول العالمية (Accessibility & WCAG)',
+            'ترتيب الشاشات عشان العميل يوصل للطلب والشراء بأقل خطوات ممكنة',
+            'تصميم شاشات تفاعلية حية تقدر تجربها وتضغط عليها بنفسك قبل البرمجة',
+            'اختيار ألوان وخطوط مريحة للعين وتليق بهوية وقيمة شركتك',
+            'تصميم متناسق تماماً ومريح للقراءة على كافة أحجام شاشات الموبايل والكمبيوتر',
           ]
         : [
-            'User journey research and intuitive information architecture',
-            'Interactive, clickable Figma prototypes to test usability early',
-            'Comprehensive design system and reusable component tokens',
-            'WCAG accessibility compliance and conversion-rate optimization (CRO)',
+            'User-friendly layouts that guide visitors to purchase with minimal clicks',
+            'Clickable interactive prototypes to preview and test before development',
+            'Harmonious fonts and colors that elevate your brand image',
+            'Clean, balanced typography optimized for mobile readability',
           ],
       deliverables: rtl
-        ? ['ملفات Figma المنظمة والمجهزة للمطورين', 'دليل الأنماط والألوان والخطوط والمكونات', 'نسخة تفاعلية لاختبار تجربة الاستخدام', 'أيقونات وأصول بصرية مجهزة بجودة عالية']
-        : ['Organized Figma Source Files with Design Tokens', 'Complete Visual Style Guide (Typography, Colors, Icons)', 'Clickable Interactive Prototype for User Testing', 'Production-Ready Asset Export'],
-      tech: ['Figma', 'FigJam', 'Design Systems', 'Micro-interactions', 'WCAG 2.1'],
+        ? ['ملفات التصميم الأصلية كاملة بجودة عالية', 'نسخة تجريبية تفاعلية تقدر تجربها بنفسك على الموبايل', 'دليل الألوان والخطوط والأيقونات الخاصة بشركتك', 'أيقونات وصور مجهزة ومحسنة للسرعة']
+        : ['Complete Figma Source Design Files', 'Clickable Interactive Prototype for Testing', 'Brand Color & Typography Style Guide', 'Production-Ready Web Assets'],
+      tech: ['Figma', 'Interactive Prototypes', 'Visual Identity', 'Mobile Design'],
       contactParam: 'uiux',
     },
     {
       id: 'infra',
       category: 'infra',
       icon: Wrench,
-      badge: rtl ? 'بنية تحتية ودعم' : 'CLOUD INFRASTRUCTURE & SLA',
-      title: rtl ? 'الصيانة السحابية، الاستضافة، والبريد المؤسسي' : 'Cloud Hosting, SLA Support & Corporate Email',
+      badge: rtl ? 'أمان وسرعة دائمة' : 'HOSTING & SUPPORT',
+      title: rtl ? 'الاستضافة السحابية والبريد الرسمي والدعم' : 'Cloud Hosting, Official Email & Support',
       subtitle: rtl
-        ? 'بنية تحتية سحابية موثوقة بنسبة تشغيل 99.9%، بريد مؤسسي رسمي، ودعم تقني دائم ومستمر'
-        : 'Enterprise cloud hosting, guaranteed 99.9% uptime, professional domain email, and proactive SLA support',
+        ? 'استضافة سريعة لموقعك وإيميلات رسمية باسم شركتك مع حماية مستمرة من الأعطال'
+        : 'Fast cloud hosting, branded company email, and ongoing support keeping your site live',
       description: rtl
-        ? 'نضمن استقرار موقعك أو نظامك على مدار الساعة؛ نقدم استضافة سحابية متقدمة مع جدران حماية ضد الهجمات، ونسخ احتياطي يومي، وبريد إلكتروني رسمي يعزز ثقة عملائك بشركتك.'
-        : 'Keep your digital systems bulletproof. We deliver enterprise cloud hosting with DDoS defense, continuous health monitoring, automated backups, and branded corporate mailboxes.',
+        ? 'بنريّح بالك من مشاكل السيرفرات والأعطال؛ بنوفّرلك استضافة سحابية سريعة جداً ما تفصلش، وإيميلات رسمية (مثل info@yourcompany.com)، مع دعم فني سريع في ضهرك دايماً.'
+        : 'Enjoy complete peace of mind. We provide high-speed cloud hosting that stays online 24/7, professional email accounts on your domain, and rapid ongoing support.',
       features: rtl
         ? [
-            'بنية تحتية سحابية موثوقة بنسبة تشغيل 99.9% مع مراقبة أداء حية',
-            'نسخ احتياطي يومي وأسبوعي مشفر مع خطط استعادة فورية عند الطوارئ',
-            'بريد إلكتروني رسمي باسم نطاق شركتك (name@company.com) بمساحات آمنة',
-            'تحديثات أمنية دورية وحماية ضد هجمات الـ DDoS والبرمجيات الخبيثة',
+            'استضافة سريعة وثابتة تعمل طوال الوقت بدون أي بطء أو انقطاع',
+            'نسخ احتياطي أوتوماتيكي يومياً لحماية ملفاتك وقواعد بياناتك من أي ضياع',
+            'إيميلات رسمية باسم موقعك (name@company.com) لبناء ثقة أكبر مع عملائك',
+            'حماية متكاملة ضد الفيروسات ومحاولات الاختراق وهجمات التعطيل',
           ]
         : [
-            'High-availability cloud infrastructure with 99.9% uptime and health checks',
-            'Automated daily encrypted backups with point-in-time disaster recovery',
-            'Official domain mailboxes (e.g., name@yourcompany.com) with spam protection',
-            'Continuous security patches, SSL renewals, and DDoS mitigation',
+            'Rock-solid cloud hosting ensuring 24/7 uptime without slowdowns',
+            'Automated daily backups safeguarding your data and files',
+            'Official branded mailboxes (name@yourcompany.com) for professional trust',
+            'Round-the-clock security protection and SSL certificates',
           ],
       deliverables: rtl
-        ? ['تقرير أداء شهري تفصيلي بالاستقرار والزيارات', 'خط دعم فني مباشر واستجابة طارئة في أقل من ساعتين', 'إدارة النطاقات وتجديد الشهادات الأمنية تلقائياً', 'فحص دوري للأداء ومؤشرات Core Web Vitals']
-        : ['Monthly SLA Performance & Security Report', 'Dedicated Support Escalation Hotline (<2hr SLA)', 'Automatic Domain & SSL Certificate Lifecycle Management', 'Continuous Speed & Core Web Vitals Audits'],
-      tech: ['AWS', 'Cloudflare', 'Vercel', 'Docker', 'Google Workspace', 'Linux'],
+        ? ['متابعة شهرية مستمرة لسرعة وأمان الموقع', 'دعم فني سريع ومباشر لحل أي استفسار في نفس اليوم', 'تجديد النطاقات وشهادات الأمان مجاناً وبانتظام', 'فحص مستمر لسرعة التصفح لضمان أفضل تجربة للمستخدم']
+        : ['Monthly Site Health & Speed Summary', 'Rapid Direct Support Channel', 'Automatic Domain & SSL Renewals', 'Continuous Performance Checkups'],
+      tech: ['Cloud Hosting', 'SSL Security', 'Professional Email', 'Daily Backups'],
       contactParam: 'support',
     },
   ]
@@ -529,61 +530,69 @@ export default function ServicesPage({ initialLocale = 'ar' }: ServicesPageProps
         {/* Hero Section */}
         <section className="services-hero">
           <div className="container">
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <Link href={homeHref} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                <Home size={14} />
-                <span>{rtl ? 'الرئيسية' : 'Home'}</span>
-              </Link>
-              <span aria-hidden="true">/</span>
-              <span>{rtl ? 'خدماتنا التقنية' : 'Services'}</span>
-            </nav>
+            <div className="services-hero-grid">
+              <div className="services-hero-content">
+                <div className="hero-kicker-stack">
+                  <nav className="breadcrumb" aria-label="Breadcrumb">
+                    <Link href={homeHref} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                      <Home size={14} />
+                      <span>{rtl ? 'الرئيسية' : 'Home'}</span>
+                    </Link>
+                    <span aria-hidden="true">/</span>
+                    <span>{rtl ? 'خدماتنا التقنية' : 'Services'}</span>
+                  </nav>
 
-            <div className="services-hero-content">
-              <div className="eyebrow">
-                <span className="live-dot" />
-                {rtl ? 'خدمات هندسية وحلول رقمية شاملة' : 'FULL-CYCLE SOFTWARE & AI SOLUTIONS'}
+                  <div className="eyebrow">
+                    <span className="live-dot" />
+                    {rtl ? 'خدمات هندسية وحلول رقمية شاملة' : 'FULL-CYCLE SOFTWARE & AI SOLUTIONS'}
+                  </div>
+                </div>
+
+                <h1>
+                  {rtl ? (
+                    <>
+                      خدمات وحلول برمجية عملية
+                      <br />
+                      <em>تساعدك تكبّر شغلك وتوصل لعملاء أكثر</em>
+                    </>
+                  ) : (
+                    <>
+                      Practical digital solutions
+                      <br />
+                      <em>crafted to grow your sales & audience</em>
+                    </>
+                  )}
+                </h1>
+
+                <p className="services-hero-lead">
+                  {rtl
+                    ? 'من المواقع السريعة وتطبيقات الموبايل إلى المنيو الذكي والرد الآلي، بنبنيلك أدوات عملية وسهلة تخدم زباينك وتكبّر مبيعاتك بكل بساطة.'
+                    : 'From high-speed websites and mobile apps to smart QR menus and automated chatbots, we build simple, reliable tools that delight your clients and scale your business.'}
+                </p>
+
+                {/* Guarantees Strip */}
+                <div className="services-guarantees-strip">
+                  <div className="strip-item">
+                    <CheckCircle2 size={18} className="strip-icon" />
+                    <span>{rtl ? 'ملكية الكود 100%' : '100% Code Ownership'}</span>
+                  </div>
+                  <div className="strip-item">
+                    <CheckCircle2 size={18} className="strip-icon" />
+                    <span>{rtl ? 'ضمان فني مجاني' : 'Free Post-Launch Warranty'}</span>
+                  </div>
+                  <div className="strip-item">
+                    <CheckCircle2 size={18} className="strip-icon" />
+                    <span>{rtl ? 'التزام صارم بالمواعيد' : 'On-Time Delivery'}</span>
+                  </div>
+                  <div className="strip-item">
+                    <CheckCircle2 size={18} className="strip-icon" />
+                    <span>{rtl ? 'دعم فني مستمر SLA' : 'SLA Technical Support'}</span>
+                  </div>
+                </div>
               </div>
 
-              <h1>
-                {rtl ? (
-                  <>
-                    حلول برمجية متطورة
-                    <br />
-                    <em>ترفع كفاءة أعمالك وتسرّع نموها</em>
-                  </>
-                ) : (
-                  <>
-                    Engineering high-impact software
-                    <br />
-                    <em>that accelerates business growth</em>
-                  </>
-                )}
-              </h1>
-
-              <p className="services-hero-lead">
-                {rtl
-                  ? 'من المواقع فائقة السرعة وتطبيقات الجوال إلى أنظمة الـ ERP المخصصة وحلول الذكاء الاصطناعي، نبتكر أدوات رقمية مصممة خصيصاً لأهدافك التجارية بمعايير هندسية عالمية.'
-                  : 'From high-velocity cloud web platforms and mobile apps to custom ERPs and intelligent AI agents, we deliver resilient software designed for measurable ROI.'}
-              </p>
-
-              {/* Guarantees Strip */}
-              <div className="services-guarantees-strip">
-                <div className="strip-item">
-                  <CheckCircle2 size={18} className="strip-icon" />
-                  <span>{rtl ? 'ملكية الكود 100%' : '100% Code Ownership'}</span>
-                </div>
-                <div className="strip-item">
-                  <CheckCircle2 size={18} className="strip-icon" />
-                  <span>{rtl ? 'ضمان فني مجاني' : 'Free Post-Launch Warranty'}</span>
-                </div>
-                <div className="strip-item">
-                  <CheckCircle2 size={18} className="strip-icon" />
-                  <span>{rtl ? 'التزام صارم بالمواعيد' : 'On-Time Delivery'}</span>
-                </div>
-                <div className="strip-item">
-                  <CheckCircle2 size={18} className="strip-icon" />
-                  <span>{rtl ? 'دعم فني مستمر SLA' : 'SLA Technical Support'}</span>
-                </div>
+              <div className="services-hero-visual">
+                <ServicesHeroVisual dark={dark} rtl={rtl} />
               </div>
             </div>
           </div>

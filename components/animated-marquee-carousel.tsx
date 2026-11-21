@@ -82,10 +82,6 @@ export function AnimatedMarqueeCarousel({ rtl }: AnimatedMarqueeCarouselProps) {
     { name: 'Node.js & Nest', label: 'Microservices', icon: Server },
   ]
 
-  // Duplicate arrays for continuous infinite looping
-  const duplicatedPartners = [...partnerProjects, ...partnerProjects]
-  const duplicatedTech = [...technologies, ...technologies]
-
   return (
     <section className="marquee-carousel-section" aria-label={rtl ? 'شركاء النجاح والتقنيات' : 'Partners and Tech Stack'}>
       <div className="container">
@@ -96,18 +92,32 @@ export function AnimatedMarqueeCarousel({ rtl }: AnimatedMarqueeCarouselProps) {
           </span>
           <h2 className="marquee-title">
             {rtl
-              ? 'حلول برمجية موثوقة تعمل بأقوى البنى التحتية'
+              ? 'حلول برمجية موثوقة تعمل بأحدث التقنيات العالمية'
               : 'Resilient Software Engineered on Modern Infrastructure'}
           </h2>
         </div>
       </div>
 
       <div className="marquee-carousel-container" dir={rtl ? 'rtl' : 'ltr'}>
-        {/* Track 1: Client Projects & Enterprise Partners (Left-to-Right or RTL) */}
+        {/* Track 1: Client Projects & Enterprise Partners */}
         <div className="marquee-track-wrap">
-          <div className={`marquee-track track-clients ${rtl ? 'animate-marquee-rtl' : 'animate-marquee-ltr'}`}>
-            {duplicatedPartners.map((p, idx) => (
-              <div key={`${p.name}-${idx}`} className="marquee-card client-card">
+          <div className="marquee-track animate-marquee">
+            {partnerProjects.map((p, idx) => (
+              <div key={`p1-${p.name}-${idx}`} className="marquee-card client-card">
+                <span className="marquee-flag" aria-hidden="true">{p.country}</span>
+                <div className="marquee-card-info">
+                  <div className="marquee-card-title-row">
+                    <strong className="marquee-name">{p.name}</strong>
+                    <span className="marquee-badge">{p.category}</span>
+                  </div>
+                  <span className="marquee-highlight">{p.highlight}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="marquee-track animate-marquee" aria-hidden="true">
+            {partnerProjects.map((p, idx) => (
+              <div key={`p2-${p.name}-${idx}`} className="marquee-card client-card">
                 <span className="marquee-flag" aria-hidden="true">{p.country}</span>
                 <div className="marquee-card-info">
                   <div className="marquee-card-title-row">
@@ -121,13 +131,29 @@ export function AnimatedMarqueeCarousel({ rtl }: AnimatedMarqueeCarouselProps) {
           </div>
         </div>
 
-        {/* Track 2: Core Engineering Stack (Reverse Direction for Dynamic Flow) */}
+        {/* Track 2: Core Engineering Stack */}
         <div className="marquee-track-wrap">
-          <div className={`marquee-track track-tech ${rtl ? 'animate-marquee-ltr' : 'animate-marquee-rtl'}`}>
-            {duplicatedTech.map((t, idx) => {
+          <div className="marquee-track animate-marquee animate-marquee-delay">
+            {technologies.map((t, idx) => {
               const IconComp = t.icon
               return (
-                <div key={`${t.name}-${idx}`} className="marquee-card tech-card">
+                <div key={`t1-${t.name}-${idx}`} className="marquee-card tech-card">
+                  <span className="marquee-tech-icon" aria-hidden="true">
+                    <IconComp size={15} />
+                  </span>
+                  <div className="marquee-tech-info">
+                    <strong className="marquee-tech-name">{t.name}</strong>
+                    <span className="marquee-tech-label">{t.label}</span>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          <div className="marquee-track animate-marquee animate-marquee-delay" aria-hidden="true">
+            {technologies.map((t, idx) => {
+              const IconComp = t.icon
+              return (
+                <div key={`t2-${t.name}-${idx}`} className="marquee-card tech-card">
                   <span className="marquee-tech-icon" aria-hidden="true">
                     <IconComp size={15} />
                   </span>

@@ -1,5 +1,5 @@
 import { projects } from './projects/project-data'
-import { SITE_NAME, SITE_NAME_AR, SITE_URL } from './site-config'
+import { SITE_NAME, SITE_NAME_AR, SITE_URL, SITE_EMAIL, SITE_PHONE_INTL } from './site-config'
 
 export const homeFaqs = [
   {
@@ -81,8 +81,8 @@ export function createOrganizationSchema() {
     image: `${SITE_URL}/home-hero-dark.png`,
     description: 'SperaCode (سبيرا كود) is a premier software development house in Egypt providing custom websites, iOS & Android mobile apps, digital QR menus, AI integrations, and UI/UX design across MENA and globally.',
     priceRange: '$$',
-    telephone: '+201000000000',
-    email: 'contact@speracode.com',
+    telephone: SITE_PHONE_INTL,
+    email: SITE_EMAIL,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'EG',

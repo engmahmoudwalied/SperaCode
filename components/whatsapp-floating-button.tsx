@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { X } from 'lucide-react'
 import { buildWhatsAppUrl } from '@/app/site-config'
 
 interface WhatsAppFloatingButtonProps {
@@ -16,9 +17,10 @@ export function WhatsAppFloatingButton({
 }: WhatsAppFloatingButtonProps) {
   const [visible, setVisible] = useState(false)
   const [tooltipDismissed, setTooltipDismissed] = useState(false)
+  const [isWiggling, setIsWiggling] = useState(false)
 
   useEffect(() => {
-    // Show after slight scroll or after 1.5s
+    // Show after slight scroll or after 1.2s
     const timer = setTimeout(() => setVisible(true), 1200)
 
     const handleScroll = () => {
@@ -27,9 +29,16 @@ export function WhatsAppFloatingButton({
       }
     }
 
+    // Occasional gentle wiggle animation to attract attention
+    const wiggleInterval = setInterval(() => {
+      setIsWiggling(true)
+      setTimeout(() => setIsWiggling(false), 1400)
+    }, 14000)
+
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
       clearTimeout(timer)
+      clearInterval(wiggleInterval)
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
@@ -47,23 +56,52 @@ export function WhatsAppFloatingButton({
       className={`whatsapp-widget-wrap ${visible ? 'is-visible' : ''} ${rtl ? 'dir-rtl' : 'dir-ltr'}`}
       aria-label={rtl ? 'تواصل معنا عبر واتساب' : 'Chat on WhatsApp'}
     >
-      {/* Interactive Tooltip Pill */}
+      {/* Modern WhatsApp Chat Preview Card */}
       {!tooltipDismissed && (
-        <a
-          href={targetUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="whatsapp-tooltip"
-          onClick={() => setTooltipDismissed(true)}
-        >
-          <span className="whatsapp-tooltip-dot" />
-          <span className="whatsapp-tooltip-text">
-            {rtl ? 'تحدث مع مهندسينا الآن' : 'Chat with our team'}
-          </span>
-          <span className="whatsapp-tooltip-sub">
-            {rtl ? 'متاحون للرد السريع' : 'Online & ready to help'}
-          </span>
-        </a>
+        <div className="whatsapp-chat-bubble" role="dialog" aria-label="WhatsApp Message Preview">
+          <button
+            type="button"
+            className="whatsapp-bubble-close"
+            onClick={() => setTooltipDismissed(true)}
+            aria-label={rtl ? 'إغلاق الإشعار' : 'Close notification'}
+          >
+            <X size={13} />
+          </button>
+
+          <a
+            href={targetUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp-bubble-link"
+          >
+            <div className="whatsapp-bubble-header">
+              <div className="whatsapp-bubble-sender">
+                <span className="whatsapp-avatar-badge">S</span>
+                <div className="whatsapp-sender-info">
+                  <strong className="whatsapp-sender-name">
+                    {rtl ? 'فريق SperaCode الهندسي' : 'SperaCode Engineering'}
+                  </strong>
+                  <span className="whatsapp-sender-status">
+                    <span className="whatsapp-online-dot" />
+                    {rtl ? 'متصل الآن • رد فوري' : 'Online • Instant Reply'}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="whatsapp-bubble-body">
+              <p>
+                {rtl
+                  ? 'مرحبًا بك! 👋 مهندسونا جاهزون لمناقشة فكرة مشروعك وتقديم استشارة مجانية وعرض سعر فوري.'
+                  : 'Hello! 👋 Our engineers are ready to discuss your project and provide a proposal.'}
+              </p>
+              <div className="whatsapp-bubble-meta">
+                <span className="whatsapp-time">{rtl ? 'الآن' : 'Just now'}</span>
+                <span className="whatsapp-checks" aria-label="read">✓✓</span>
+              </div>
+            </div>
+          </a>
+        </div>
       )}
 
       {/* Main Animated Floating Action Button */}
@@ -71,15 +109,18 @@ export function WhatsAppFloatingButton({
         href={targetUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="whatsapp-floating-btn"
+        className={`whatsapp-floating-btn ${isWiggling ? 'is-wiggling' : ''}`}
         aria-label={rtl ? 'محادثة عبر واتساب' : 'Chat on WhatsApp'}
       >
         {/* Animated Radar Pulse Waves */}
         <span className="whatsapp-pulse-ring ring-1" aria-hidden="true" />
         <span className="whatsapp-pulse-ring ring-2" aria-hidden="true" />
 
-        {/* Live Online Beacon */}
-        <span className="whatsapp-status-beacon" title={rtl ? 'متصل الآن' : 'Online now'} />
+        {/* Urgent Red Unread Message Badge */}
+        <span className="whatsapp-red-badge" aria-label="1 unread message">
+          <span className="whatsapp-badge-pulse" aria-hidden="true" />
+          <span className="whatsapp-badge-count">1</span>
+        </span>
 
         {/* Crisp Vector WhatsApp SVG Icon */}
         <svg

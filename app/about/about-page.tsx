@@ -37,6 +37,7 @@ import { SperaLogo } from '@/components/spera-logo'
 import { SiteFooter } from '@/components/site-footer'
 import { CustomerReviews } from '@/components/customer-reviews'
 import { WhatsAppFloatingButton } from '@/components/whatsapp-floating-button'
+import { AboutHeroVisual } from '@/components/hero-visuals/about-hero-visual'
 import { buildWhatsAppUrl } from '@/app/site-config'
 
 type Locale = 'ar' | 'en'
@@ -143,65 +144,65 @@ export default function AboutPage({ initialLocale = 'ar' }: AboutPageProps) {
     ? [
         {
           step: '01',
-          title: 'الاستكشاف والتحليل الفني المعمق',
-          desc: 'نعقد جلسات استكشافية لفهم نموذج عملك بدقة، وتحديد أهدافك التجارية، واختيار البنية التحتية والتقنيات الأنسب لمشروعك.',
-          deliverable: 'وثيقة المواصفات الفنية وخارطة الطريق (Technical Specs & Architecture Roadmap)',
+          title: 'فهم فكرتك والتخطيط المالي والزمني',
+          desc: 'بنسمع منك تفاصيل فكرتك واحتياجات شغلك، ونقدملك خطة عمل واضحة وتكلفة دقيقة تناسب ميزانيتك وبدون أي التزام.',
+          deliverable: 'خطة عمل وجدول زمني محدد وواضح للتسليم',
         },
         {
           step: '02',
-          title: 'التصميم وبناء النماذج التفاعلية (UI/UX)',
-          desc: 'نصمم رحلة المستخدم ونبني نماذج تفاعلية حية (Clickable Prototypes) على Figma لتختبر تجربة الاستخدام والشاشات قبل كتابة سطر كود واحد.',
-          deliverable: 'تصاميم Figma التفاعلية ونظام التصميم الموحد (Design System)',
+          title: 'تصميم الشاشات وتجربة الاستخدام',
+          desc: 'بنصمملك شكل الشاشات ونوريك شكل موقعك أو تطبيقك وتجربه بنفسك كأنك زبون قبل ما نبدأ كتابة سطر كود واحد.',
+          deliverable: 'نسخة تفاعلية حية لمعاينة الشاشات وتجربتها واعتمادها',
         },
         {
           step: '03',
-          title: 'التطوير الهندسي المرن والرشيق (Agile Sprints)',
-          desc: 'نبني الشيفرة البرمجية وفق أعلى المعايير الهندسية (Clean Code) مع اجتماعات أسبوعية واستعراض دوري لمراحل التطوير خطوة بخطوة.',
-          deliverable: 'بيئة عرض حية (Staging Environment) لمتابعة التطور أولاً بأول',
+          title: 'البرمجة والتنفيذ العملي خطوة بخطوة',
+          desc: 'بنبرمج المشروع بأعلى كفاءة وسرعة، ونشاركك التطور دورياً عشان تشوف شغلك وهو بيكبر قدام عينك خطوة بخطوة.',
+          deliverable: 'رابط تجريبي تتابع منه مراحل المشروع أولاً بأول',
         },
         {
           step: '04',
-          title: 'فحص الجودة الصارم واختبارات الأمان (QA)',
-          desc: 'نجري اختبارات شاملة للتوافق مع كافة الشاشات والمتصفحات، وفحص سرعة التحميل (Core Web Vitals > 95%)، واختبارات الأمان وحماية البيانات.',
-          deliverable: 'تقرير فحص الجودة وشهادات الحماية والأمان (Security & Performance Audit)',
+          title: 'التجربة الشاملة والفحص الدقيق',
+          desc: 'بنجرب كل زرار وكل صفحة على مختلف أجهزة الموبايل ونتأكد من السرعة والأمان التام قبل الإطلاق الرسمي للجمهور.',
+          deliverable: 'فحص كامل للتأكد من خلو المشروع من أي أخطاء أو بطء',
         },
         {
           step: '05',
-          title: 'الإطلاق السحابي والضمان الفني والنمو',
-          desc: 'ندشن مشروعك على بنية تحتية سحابية موثوقة مع فترة ضمان مجانية ودعم فني مستمر وتدريب كامل لفريقك على إدارة النظام.',
-          deliverable: 'التدشين الرسمي، تسليم الشيفرة بنسبة 100%، وبدء الضمان الفني المجاني',
+          title: 'الإطلاق الرسمي والضمان وتدريب فريقك',
+          desc: 'بنطلق مشروعك للجمهور، ونسلمك كل الكود والحسابات باسمك 100%، وندربك أنت وفريقك على إدارته بكل سهولة مع ضمان فني كامل.',
+          deliverable: 'التدشين الرسمي، تسليم الكود 100%، وبدء الضمان والدعم الفني المجاني',
         },
       ]
     : [
         {
           step: '01',
-          title: 'Discovery & Strategic Scoping',
-          desc: 'We conduct comprehensive scoping sessions to unpack your business model, understand customer pain points, and architect the optimal software foundation.',
-          deliverable: 'Technical Architecture Specification & Milestone Roadmap',
+          title: 'Discovery & Clear Scoping',
+          desc: 'We listen to your ideas and business goals, crafting a clear, realistic roadmap with upfront pricing that fits your budget.',
+          deliverable: 'Clear Milestone Roadmap & Transparent Project Plan',
         },
         {
           step: '02',
-          title: 'UI/UX & Interactive Prototyping',
-          desc: 'We design the user journey and build pixel-perfect interactive prototypes in Figma, validating every micro-interaction before a single line of code is written.',
-          deliverable: 'Clickable Figma Prototypes & Reusable Design System Tokens',
+          title: 'UI/UX & Interactive Preview',
+          desc: 'We design every screen and build an interactive prototype so you can test the full experience as a user before coding starts.',
+          deliverable: 'Clickable Prototype for Early Validation & Signoff',
         },
         {
           step: '03',
-          title: 'Agile Engineering Sprints',
-          desc: 'We implement clean, maintainable, modular code with weekly sprint demos, keeping you closely aligned with every feature as it comes to life.',
-          deliverable: 'Live Staging Deployments with Continuous Integration (CI/CD)',
+          title: 'Agile Development Step by Step',
+          desc: 'We build your application with clean, high-performance code, updating you regularly so you can see progress in real time.',
+          deliverable: 'Private Staging Link to Test Progress Continually',
         },
         {
           step: '04',
-          title: 'Quality Assurance & Security Audits',
-          desc: 'Rigorous cross-device, cross-browser, stress-testing, and security scans ensuring sub-second response times and bulletproof data integrity.',
-          deliverable: 'Comprehensive QA, Accessibility, and Performance Audit Report',
+          title: 'Quality Testing & Verification',
+          desc: 'We rigorously test every button, flow, and screen across various phones to ensure rock-solid speed, usability, and security.',
+          deliverable: 'Complete Cross-Device Usability & Security Verification',
         },
         {
           step: '05',
-          title: 'Cloud Deployment & Warranty',
-          desc: 'We launch on high-availability cloud infrastructure with a complimentary warranty period, ongoing SLA technical support, and full team onboarding.',
-          deliverable: 'Production Deployment, 100% Code Handover, and Complimentary Warranty',
+          title: 'Launch, Onboarding & Warranty',
+          desc: 'We officially launch your project, transfer 100% ownership to your name, train your team, and stand by you with our warranty.',
+          deliverable: 'Official Deployment, 100% Ownership Handover & Free Warranty',
         },
       ]
 
@@ -209,45 +210,45 @@ export default function AboutPage({ initialLocale = 'ar' }: AboutPageProps) {
     ? [
         {
           icon: Code2,
-          title: 'هندسة نظيفة بدون ديون تقنية',
-          desc: 'نبني برمجياتنا بشيفرة نظيفة وموثقة بالكامل (Clean Code)، لتتمكن من التوسع وتطوير مشروعك مستقبلاً بسلاسة ودون الحاجة لإعادة البناء.',
+          title: 'برمجة متقنة وسهلة التطوير',
+          desc: 'بنبرمج مشروعك بطريقة حديثة ومنظمة، عشان يفضل سريع وسلس وتقدر تضيف عليه أي ميزات جديدة في المستقبل بكل سهولة وبدون تعقيد.',
         },
         {
           icon: Clock,
           title: 'التزام تعاقدي صارم بالمواعيد',
-          desc: 'المواعيد بالنسبة لنا عهد مقدس. نضع جداول زمنية واقعية ونلتزم بتسليم كل مرحلة في موعدها المتفق عليه بالعقد.',
+          desc: 'ميعاد التسليم عندنا عهد؛ بنحدد تاريخ واضح ومكتوب في العقد، ونلتزم بيه تماماً بدون أي تأخير أو مماطلة.',
         },
         {
           icon: ShieldCheck,
-          title: 'ملكية مطلقة للعميل بنسبة 100%',
-          desc: 'أنت المالك الوحيد لكامل الكود المصدري، والتصاميم، وقواعد البيانات. لا نفرض قيوداً ولا نلزمك باشتراكات احتكارية.',
+          title: 'المشروع ملكك أنت بالكامل 100%',
+          desc: 'أنت المالك الوحيد لكامل الكود المصدري، والتصاميم، وقواعد البيانات بدون أي اشتراكات إجبارية أو قيود خفية.',
         },
         {
           icon: HeartHandshake,
-          title: 'شراكة استراتيجية ممتدة',
-          desc: 'لا ننظر لعملائنا كمشاريع عابرة، بل كشركاء نجاح. نقدم استشارات تقنية مستمرة لمساعدتك على اتخاذ القرارات الأفضل لأعمالك.',
+          title: 'شراكة مستمرة ودعم لا يتوقف',
+          desc: 'مش بنسلّمك المشروع ونختفي؛ بنكون في ضهرك دايماً، بنجاوب على كل أسئلتك وبنساعدك تاخد أفضل القرارات لنجاح وتكبير شغلك.',
         },
       ]
     : [
         {
           icon: Code2,
-          title: 'Clean Architecture, Zero Tech Debt',
-          desc: 'We engineer modular, thoroughly documented codebases that effortlessly adapt and scale as your transaction volume and user base multiply.',
+          title: 'Clean & Scalable Code',
+          desc: 'We build your solution with modern, modular code so it stays fast and allows you to add new features effortlessly down the road.',
         },
         {
           icon: Clock,
           title: 'Strict Delivery Timelines',
-          desc: 'Punctuality is our core engineering discipline. We establish realistic agile milestones and deliver on agreed deadlines without surprises.',
+          desc: 'Timelines are commitments. We establish milestone dates and deliver every phase on schedule without excuses or delays.',
         },
         {
           icon: ShieldCheck,
-          title: '100% Client Ownership',
-          desc: 'You own every line of code, design file, and database schema from day one. Zero proprietary vendor lock-in or hidden recurring licensing.',
+          title: '100% Full Client Ownership',
+          desc: 'You own every line of code, design file, and database schema from day one. Zero proprietary vendor lock-in or recurring fees.',
         },
         {
           icon: HeartHandshake,
-          title: 'Long-Term Strategic Partnership',
-          desc: 'We are more than an agency; we act as your dedicated CTO and technology partner, guiding architectural decisions as your enterprise expands.',
+          title: 'Long-Term Partnership & Care',
+          desc: 'We stand by your side long after launch, providing guidance, rapid answers, and proactive support to ensure your product succeeds.',
         },
       ]
 
@@ -356,42 +357,50 @@ export default function AboutPage({ initialLocale = 'ar' }: AboutPageProps) {
         {/* Hero Section */}
         <section className="about-hero">
           <div className="container">
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <Link href={homeHref} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                <Home size={14} />
-                <span>{rtl ? 'الرئيسية' : 'Home'}</span>
-              </Link>
-              <span aria-hidden="true">/</span>
-              <span>{rtl ? 'من نحن وعن الشركة' : 'About SperaCode'}</span>
-            </nav>
+            <div className="about-hero-grid">
+              <div className="about-hero-content">
+                <div className="hero-kicker-stack">
+                  <nav className="breadcrumb" aria-label="Breadcrumb">
+                    <Link href={homeHref} style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                      <Home size={14} />
+                      <span>{rtl ? 'الرئيسية' : 'Home'}</span>
+                    </Link>
+                    <span aria-hidden="true">/</span>
+                    <span>{rtl ? 'من نحن وعن الشركة' : 'About SperaCode'}</span>
+                  </nav>
 
-            <div className="about-hero-content">
-              <div className="eyebrow">
-                <span className="live-dot" />
-                {rtl ? 'عن سبيرا كود (SperaCode)' : 'ABOUT SPERACODE'}
+                  <div className="eyebrow">
+                    <span className="live-dot" />
+                    {rtl ? 'عن سبيرا كود (SperaCode)' : 'ABOUT SPERACODE'}
+                  </div>
+                </div>
+
+                <h1>
+                  {rtl ? (
+                    <>
+                      نبني برمجيات تصنع الفارق
+                      <br />
+                      <em>وتنقل أعمالك نحو الريادة والمستقبل</em>
+                    </>
+                  ) : (
+                    <>
+                      Engineering world-class software
+                      <br />
+                      <em>that accelerates ambitious companies</em>
+                    </>
+                  )}
+                </h1>
+
+                <p className="about-hero-lead">
+                  {rtl
+                    ? 'سبيرا كود (SperaCode) شركة برمجيات متخصصة في مساعدة الشركات وأصحاب الأعمال على تحويل أفكارهم لمواقع سريعة، تطبيقات موبايل سهلة، ومنيو إلكتروني ذكي يخدم زباينهم.. بنسلّمك شغلك في ميعاده وبأعلى جودة تفيدك في شغلك وتكبّر مبيعاتك.'
+                    : 'SperaCode turns ideas into high-speed websites, intuitive mobile apps, digital QR menus, and tailored software solutions—delivered on time with zero hassle and full long-term support across Egypt, the Gulf, and globally.'}
+                </p>
               </div>
 
-              <h1>
-                {rtl ? (
-                  <>
-                    نبني برمجيات تصنع الفارق
-                    <br />
-                    <em>وتنقل أعمالك نحو الريادة والمستقبل</em>
-                  </>
-                ) : (
-                  <>
-                    Engineering world-class software
-                    <br />
-                    <em>that accelerates ambitious companies</em>
-                  </>
-                )}
-              </h1>
-
-              <p className="about-hero-lead">
-                {rtl
-                  ? 'سبيرا كود (SperaCode) شركة برمجيات وهندسة تقنية متخصصة في تطوير المواقع والمنصات وتطبيقات الجوال وحلول الذكاء الاصطناعي. نجمع بين الدقة الهندسية وأعلى معايير تجربة الاستخدام لنبني منتجات تقود الأسواق في مصر والخليج العربي والعالم.'
-                  : 'SperaCode is an elite software engineering house and digital product agency. We bridge the gap between cutting-edge technology (Cloud, Modern Web, AI) and tangible business growth across Egypt, Saudi Arabia, the UAE, Kuwait, and globally.'}
-              </p>
+              <div className="about-hero-visual">
+                <AboutHeroVisual dark={dark} rtl={rtl} />
+              </div>
             </div>
 
             {/* Stats Grid */}
