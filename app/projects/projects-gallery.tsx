@@ -45,6 +45,7 @@ export default function ProjectsGallery({ initialLocale = 'ar' }: { initialLocal
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showBackToTop, setShowBackToTop] = useState(false)
   const [activeCaseStudy, setActiveCaseStudy] = useState<PortfolioProject | null>(null)
+  const [showAllProjects, setShowAllProjects] = useState(false)
 
   const rtl = locale === 'ar'
   const basePath = rtl ? '' : '/en'
@@ -67,6 +68,10 @@ export default function ProjectsGallery({ initialLocale = 'ar' }: { initialLocal
       return titleMatch || descMatch || tagsMatch
     })
   }, [active, searchQuery, rtl])
+
+  const isDefaultView = active === 'All' && !searchQuery.trim()
+  const displayedProjects = isDefaultView && !showAllProjects ? filtered.slice(0, 4) : filtered
+  const hasMoreProjects = isDefaultView && filtered.length > 4
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('speracode-theme')
@@ -386,7 +391,7 @@ export default function ProjectsGallery({ initialLocale = 'ar' }: { initialLocal
 
             {/* Portfolio Grid */}
             <div className="projects-grid">
-              {filtered.map((project, index) => {
+              {displayedProjects.map((project, index) => {
                 const isLive = Boolean(project.isLive && project.demoUrl)
                 return (
                   <article
@@ -494,6 +499,33 @@ export default function ProjectsGallery({ initialLocale = 'ar' }: { initialLocal
                 )
               })}
             </div>
+
+            {hasMoreProjects && (
+              <div className="portfolio-load-more-wrap">
+                <button
+                  type="button"
+                  onClick={() => setShowAllProjects((prev) => !prev)}
+                  className="button button-secondary portfolio-load-more-btn"
+                  aria-expanded={showAllProjects}
+                >
+                  {showAllProjects ? (
+                    <>
+                      <span>{rtl ? 'عرض أقل' : 'Show Fewer Projects'}</span>
+                      <ArrowUp size={16} aria-hidden="true" />
+                    </>
+                  ) : (
+                    <>
+                      <span>
+                        {rtl
+                          ? `رؤية المزيد من المشاريع (${filtered.length - 4} مشاريع إضافية)`
+                          : `View More Projects (${filtered.length - 4} more)`}
+                      </span>
+                      <ArrowDown size={16} aria-hidden="true" />
+                    </>
+                  )}
+                </button>
+              </div>
+            )}
 
             <div
               style={{

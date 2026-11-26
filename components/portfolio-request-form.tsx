@@ -13,9 +13,15 @@ import {
   MessageCircle,
   ShieldCheck,
   RotateCcw,
+  Globe2,
+  ShoppingBag,
+  Smartphone,
+  QrCode,
+  Code2,
 } from 'lucide-react'
 import { buildWhatsAppUrl, SITE_PHONE_LOCAL } from '@/app/site-config'
 import { sendViaEmailJS } from '@/app/contact/emailjs-client'
+import { CustomSelect, type SelectOption } from '@/components/custom-select'
 
 interface PortfolioRequestFormProps {
   rtl: boolean
@@ -46,6 +52,84 @@ export function PortfolioRequestForm({ rtl }: PortfolioRequestFormProps) {
         'Interactive QR Menu',
         'Custom ERP / Business System',
         'Other Vision',
+      ]
+
+  const projectTypeOptions: SelectOption[] = rtl
+    ? [
+        {
+          value: 'موقع إلكتروني أو منصة',
+          label: 'موقع إلكتروني أو منصة',
+          icon: Globe2,
+          hint: 'مواقع فائقة السرعة، بوابات رقمية، وتطبيقات ويب سحابية',
+        },
+        {
+          value: 'متجر إلكتروني متكامل',
+          label: 'متجر إلكتروني متكامل',
+          icon: ShoppingBag,
+          hint: 'كتالوج منتجات، سلة شراء، ودفع إلكتروني',
+        },
+        {
+          value: 'تطبيق جوال (iOS & Android)',
+          label: 'تطبيق جوال (iOS & Android)',
+          icon: Smartphone,
+          hint: 'تطبيقات هجينة وأصيلة للأجهزة الذكية',
+        },
+        {
+          value: 'المنيو الرقمي QR',
+          label: 'المنيو الرقمي QR',
+          icon: QrCode,
+          hint: 'منيو ذكي للمطاعم مع طلب مباشر على واتساب',
+        },
+        {
+          value: 'نظام إداري مخصص (ERP)',
+          label: 'نظام إداري مخصص (ERP)',
+          icon: Code2,
+          hint: 'إدارة الفواتير، المخازن، والعمليات بدقة',
+        },
+        {
+          value: 'فكرة أخرى',
+          label: 'فكرة أخرى',
+          icon: Sparkles,
+          hint: 'حل برمجي أو فكرة رقمية جديدة مفصلة لطلبك',
+        },
+      ]
+    : [
+        {
+          value: 'Website or Platform',
+          label: 'Website or Platform',
+          icon: Globe2,
+          hint: 'High-speed cloud platforms & web applications',
+        },
+        {
+          value: 'E-Commerce Store',
+          label: 'E-Commerce Store',
+          icon: ShoppingBag,
+          hint: 'Full checkout, payments, and product catalog',
+        },
+        {
+          value: 'Mobile App (iOS & Android)',
+          label: 'Mobile App (iOS & Android)',
+          icon: Smartphone,
+          hint: 'Seamless cross-platform apps for iPhone & Android',
+        },
+        {
+          value: 'Interactive QR Menu',
+          label: 'Interactive QR Menu',
+          icon: QrCode,
+          hint: 'Smart restaurant menu with direct WhatsApp ordering',
+        },
+        {
+          value: 'Custom ERP / Business System',
+          label: 'Custom ERP / Business System',
+          icon: Code2,
+          hint: 'Tailored invoicing, inventory, HR, and ops suite',
+        },
+        {
+          value: 'Other Vision',
+          label: 'Other Vision',
+          icon: Sparkles,
+          hint: 'Custom software architecture tailored to your goals',
+        },
       ]
 
   const formattedWhatsAppBrief = rtl
@@ -260,17 +344,16 @@ ${details || '—'}
                     <Sparkles size={15} className="portfolio-label-icon" aria-hidden="true" />
                     <span>{rtl ? 'نوع المشروع المطلوب' : 'Project Category'}</span>
                   </label>
-                  <select
+                  <CustomSelect
                     id="req-type"
+                    name="projectType"
                     value={projectType}
-                    onChange={(e) => setProjectType(e.target.value)}
-                  >
-                    {projectTypes.map((t) => (
-                      <option key={t} value={t}>
-                        {t}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={(val) => setProjectType(val)}
+                    placeholder={rtl ? 'اختر نوع المشروع المطلوب...' : 'Select project category...'}
+                    options={projectTypeOptions}
+                    rtl={rtl}
+                    required
+                  />
                 </div>
 
                 {/* Project Details */}

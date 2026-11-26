@@ -210,9 +210,10 @@ export default function HomePage({ initialLocale = 'ar' }: { initialLocale?: Loc
   }
 
   const featuredHomeProjects = [
-    projects.find((p) => p.title.toLowerCase().includes('fun group')),
-    projects.find((p) => p.title.includes('SchoolQ8') || p.title.includes('الكويتية')),
     projects.find((p) => p.title.includes('(HZ)') || p.title.includes('حسين غازي')),
+    projects.find((p) => p.title.toLowerCase().includes('fun group')),
+    projects.find((p) => p.title.toLowerCase().includes('4m group')),
+    projects.find((p) => p.title.includes('البحر الأحمر')),
   ].filter(Boolean) as typeof projects
 
   const basePath = locale === 'en' ? '/en' : ''

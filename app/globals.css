@@ -3402,6 +3402,35 @@ html[lang="en"] .marquee-kicker,
   margin-bottom: 20px;
 }
 
+.portfolio-load-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 36px 0 20px;
+}
+
+.portfolio-load-more-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 14px 32px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: var(--radius-md) !important;
+  background: var(--surface-card) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--ink) !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06) !important;
+  cursor: pointer;
+  transition: all 0.25s ease !important;
+}
+
+.portfolio-load-more-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue) !important;
+  box-shadow: 0 8px 26px rgba(37, 99, 235, 0.18) !important;
+}
+
 .success-wa-btn {
   background: linear-gradient(135deg, #25d366 0%, #128c7e 100%) !important;
   color: #ffffff !important;
