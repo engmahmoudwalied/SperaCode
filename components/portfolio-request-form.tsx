@@ -200,9 +200,11 @@ ${details || '—'}
               <div className="portfolio-form-grid">
                 {/* Name */}
                 <div className="contact-field">
-                  <label htmlFor="req-name">
-                    <User size={15} aria-hidden="true" />
-                    <span>{rtl ? 'الاسم الكريم' : 'Full Name'} *</span>
+                  <label htmlFor="req-name" className="portfolio-field-label">
+                    <User size={15} className="portfolio-label-icon" aria-hidden="true" />
+                    <span>
+                      {rtl ? 'الاسم الكريم' : 'Full Name'} <b className="required-star">*</b>
+                    </span>
                   </label>
                   <input
                     id="req-name"
@@ -216,9 +218,11 @@ ${details || '—'}
 
                 {/* Phone / WhatsApp */}
                 <div className="contact-field">
-                  <label htmlFor="req-phone">
-                    <Phone size={15} aria-hidden="true" />
-                    <span>{rtl ? 'رقم الهاتف أو الواتساب' : 'Phone / WhatsApp'} *</span>
+                  <label htmlFor="req-phone" className="portfolio-field-label">
+                    <Phone size={15} className="portfolio-label-icon" aria-hidden="true" />
+                    <span>
+                      {rtl ? 'رقم الهاتف أو الواتساب' : 'Phone / WhatsApp'} <b className="required-star">*</b>
+                    </span>
                   </label>
                   <input
                     id="req-phone"
@@ -233,9 +237,11 @@ ${details || '—'}
 
                 {/* Email */}
                 <div className="contact-field">
-                  <label htmlFor="req-email">
-                    <Mail size={15} aria-hidden="true" />
-                    <span>{rtl ? 'البريد الإلكتروني لاستلام الديمو' : 'Email Address'} *</span>
+                  <label htmlFor="req-email" className="portfolio-field-label">
+                    <Mail size={15} className="portfolio-label-icon" aria-hidden="true" />
+                    <span>
+                      {rtl ? 'البريد الإلكتروني لاستلام الديمو' : 'Email Address'} <b className="required-star">*</b>
+                    </span>
                   </label>
                   <input
                     id="req-email"
@@ -250,8 +256,8 @@ ${details || '—'}
 
                 {/* Project Type */}
                 <div className="contact-field">
-                  <label htmlFor="req-type">
-                    <Sparkles size={15} aria-hidden="true" />
+                  <label htmlFor="req-type" className="portfolio-field-label">
+                    <Sparkles size={15} className="portfolio-label-icon" aria-hidden="true" />
                     <span>{rtl ? 'نوع المشروع المطلوب' : 'Project Category'}</span>
                   </label>
                   <select
@@ -269,8 +275,8 @@ ${details || '—'}
 
                 {/* Project Details */}
                 <div className="contact-field contact-field-full">
-                  <label htmlFor="req-details">
-                    <FileText size={15} aria-hidden="true" />
+                  <label htmlFor="req-details" className="portfolio-field-label">
+                    <FileText size={15} className="portfolio-label-icon" aria-hidden="true" />
                     <span>{rtl ? 'تفاصيل فكرة المشروع أو المميزات المطلوبة' : 'Project Scope & Features'}</span>
                   </label>
                   <textarea
